@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적표</title>
+</head>
+<body>
+    <h1>성적표</h1>
+    <script>
+        // 학생 5명 객체 -> 배열에저장
+        // 학생 객체 -> 생성자 함수로 생성
+        // 학생정보 => 이름, html, css, js, java
+        // 메소드 => prototype에 저장, 총점, 평균, 출력문
+
+        // 1. 생성자 함수 Make
+        function Student(name, html, css, js, java){
+            this.name = name;
+            this.html = html;
+            this.css = css;
+            this.js = js;
+            this.java = java;
+        }
+
+        // 메소드 만들기
+        Student.prototype.sum = function(){
+            return this.html + this.css + this.java + this.js
+        }
+        Student.prototype.avg = function(){
+            return Math.round(this.sum()/4)
+        }
+
+        // grade 추가
+
+        Student.prototype.grade = function(){
+            switch(Math.floor(this.avg()/10)){
+                    case 10 :
+                    case 9 : grade = 'A' ; break;
+                    case 8 : grade = 'B' ; break;
+                    case 7 : grade = 'C' ; break;
+                    case 6 : grade = 'D' ; break;
+                    default : grade = 'F' ;
+                } 
+                return grade;
+        }
+
+        Student.prototype.print = function(){
+            return `${this.name} \t ${this.sum()} \t ${this.avg()} \t ${this.grade()}` // sum 에 () 하는 이유는 호출 해줘야 결과를 갖고 오기 에 꼭 해줘야 함
+        }
+
+        // 배열 생성 -> 학생 객체 저장
+        let students = [
+            new Student('홍길동', 99, 100, 80, 92),
+            new Student('성춘향', 88, 100, 79, 97),
+            new Student('이몽룡', 99, 69, 78, 80),
+            new Student('임영웅', 99, 100, 69, 90),
+            new Student('성유리', 66, 86, 49, 97),
+        ]
+        // console.log(students)
+
+        // 학생 성적 출력
+        console.log(`이름 \t 총점 \t 평균 \t 등급`)
+        for(let idx in students){
+            console.log(students[idx].print());
+        }
+    </script>
+</body>
+</html>

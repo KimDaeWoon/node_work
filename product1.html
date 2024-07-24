@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heade{
+            width: 1280px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+        .a{
+            background-color: #477a7b;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+        }
+        #gridContainer{
+            display: grid;
+            grid-template-columns: 200px 200px 200px 200px;
+            grid-template-rows: 200px 200px 200px 200px;
+            box-sizing: border-box;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        #left1{
+            float: left;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        #left2{
+            float: left;
+        }        #left3{
+            float: left;
+        }
+        #left4{
+            float: left;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="heade">
+        <a href="#" class="a">아무거나</a>
+    </div>
+    <div id = "gridContainer">
+        <div id="left1">
+            <img src="./img/봄.jpg" alt="봄">
+            <span>좌측1</span>
+        </div>
+        <div id="left2">
+            <h1>좌측2</h1>
+        </div>
+        <div id="left3">
+            <h1>좌측3</h1>
+        </div>
+        <div id="left4">
+            <h1>좌측4</h1>
+        </div>
+    </div>
+
+</body>
+</html>

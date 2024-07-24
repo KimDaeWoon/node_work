@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>체크리스트</title>
+    <link href="css/도서목록.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2> 권장 도서 목록</h2>
+      <form name="bookInfo">
+        <input type="text" id="book" name="book" autofocus>
+        <button type="button" id="add" name="add" class="addBtn" >추가</button>
+      </form>
+      <div id="bookList"></div>
+    </div>
+    <!-- <script src="js/도서목록.js"></script> -->
+    <script>
+      let headBook = document.querySelector('#book')
+      let headAdd = document.querySelector('#add')
+      let headBooklist = document.querySelector('#bookList')
+
+      let books = [];
+
+      headAdd.onclick = addBt;
+
+      function addBt(){        
+        books.push(headBook.value);
+        headBook.value = '';
+        headBook.focus();
+
+        print();
+      }
+
+      function print(){
+        let bList = `<ul>`
+          for(i = 0; i < books.length; i++){
+            bList += `<li>${books[i]}<span class ='del' id = ${i}>취소<span></li>`
+          }
+          bList += `</ul>`
+          headBooklist.innerHTML = bList
+
+        let delList = document.querySelectorAll('.del');
+          for (let a of delList){
+            a = remove
+          }
+        }
+
+      function remove(){
+        
+      }
+
+
+
+
+    </script>
+  </body>
+</html>

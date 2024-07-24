@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <style>
+        div{
+            background-color: #ccc;
+            margin: 10px;
+            padding: 10px;
+            width: 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>반복문</h1>
+    <script>
+        // 반복문 : for -> 반복 횟수가 정해졌을 때
+        // 1에서 10000까지 합
+        // let sum = 0;
+        // for(let i = 1; i<= 100000 ; i++){
+        //     sum = sum + i;
+        //     // console.log(`i : ${i} --> sum : ${sum}`);
+        // }
+        // console.log(`sum : ${sum}`);
+
+        // 1 에서 100 까지 홀수 합과 짝수 합
+        // for(let i = 0; i<5 ; i++){ 
+        //     console.log(`${i}번째 출력`); 
+        // } 
+        // let odd = 0;
+        // let even = 0;
+        // for(let i = 1; i <= 100 ; i++ ){
+        //     if(i % 2 == 0){
+        //         even += i;       // even = even + i
+        //     } else{
+        //         odd += i;
+        //     }
+        // }
+        // console.log(`홀수합 : ${odd}, 짝수합 : ${even}`);
+
+        // 1에서 30 까지 3의 배수를 출력 하세요
+        // 3의 배수 갯수 출력
+        // let cnt = 0;
+        // for(let i = 1; i <= 30; i++){
+        //     if(i % 3 == 0){
+        //         console.log(`3의 배수 ${i}`);
+        //         cnt++;
+        //     }
+        // }
+        // console.log(`3의 배수 갯수 = ${cnt}`);
+
+
+        // // 배열 안에 입력된 값 출력 1. 방이름 필요 (방번호)
+        // let names = ['홍길동', '성춘향', '이몽룡', '갑돌이','진','민이'];
+        // for (i = 0; i < names.length; i++ ){
+        //     console.log(names[i]);
+        //}
+
+        // while : 조건이 만족 할 때 까지 반복
+        // 합이 50을 넘으면 반복문을 벗어나도록 
+        // 1에서 n 까지 합이 50을 넘는 지 n값 구하기
+        
+        // let n = 0;
+        // let sum = 0;
+        // while(sum <= 100){
+        //     n++;
+        //     sum += n;
+        //     console.log(`${n}, ${sum}`);
+
+        // }
+        // console.log(`${n}, ${sum}`);
+
+        // n = 0;
+        // sum = 0;
+        // while(true){
+        //     n++;
+        //     sum += n;
+        //     if(sum > 100) break;
+        // }
+        // console.log(`${n}, ${sum}`);
+
+        // 1에서 부터 n 까지 7의 배수를 5개만 출력
+
+        // n = 0;
+        // cnt = 0;
+        // while (true){
+        //     n++;
+        //     if(n % 7 == 0){
+        //         cnt++;
+        //         console.log(n);
+        //         if(cnt >= 5) break;
+        //     }
+        // }
+
+        // n = 0;
+        // cnt = 0;
+        // do{
+        //     n++;
+        //     if(n % 7 == 0){
+        //         cnt++;
+        //         console.log(n);
+        //         if(cnt > 5) break;
+        //     }
+        // } while(true);
+
+        // 중첩 반복문 
+        // for(let i = 1; i <= 5; i++){
+        //     for(let j = 1; j <= 3; j++){
+        //         console.log(`i : ${i}-------------> j : ${j}`);
+        //     }
+        // }
+
+        // 구구단 
+        let gugudan = ''; // 메모리 저장
+        for(let i = 2; i < 6; i++){
+            gugudan += `<div>` ;
+            gugudan += `${i}단 ======= <br>`;
+
+            for(let j = 1; j < 10; j++){
+                gugudan +=`${i} X ${j} = ${i * j} <br>`;
+            }
+            gugudan += `</div>`;
+        }
+        document.write(gugudan)
+
+        // 별찍기
+        let stars = '';
+        for(let i = 1 ; i <= 5; i++){
+           for(let j = 1 ; j <= i; j++){
+            stars += '*';
+           } 
+           stars += '\n';
+        }
+        console.log(stars);
+
+        // for(let i = 1 ; i <= 5; i++){
+        //     let stars = '';
+        //    for(let j = 1 ; j <= i; j++){
+        //     stars += '*';
+        //    } 
+        //    console.log(stars);
+        // }
+
+        
+
+
+    </script>
+</body>
+</html>

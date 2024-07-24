@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js이벤트</title>
+    <style>
+        #container{
+            width: 500px;
+            margin: 0 auto;
+        }
+        img{
+            width: 500px;
+        }
+        #contents{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id = "parent">부모 이벤트
+            <p id = "child">자식</p>
+        </h1>
+        <div id = "createP"></div>
+        <img src="./img/Happy MOKOKO Day.jpg" alt="MOKOKO">
+        <button type="button" id="showButton">상세설명 보기</button>
+        <div id = "contents">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Architecto illum qui impedit, sit saepe accusamus porro ducimus! 
+                Voluptatem similique, tenetur officiis recusandae, eius blanditiis optio non voluptatum vel accusantium culpa?
+            </p>
+            <button type="button" id="hideButton">상세설명닫기</button>
+        </div>
+    </div>
+    <script>
+        // 웹요소 접근 -> 변수에 저장
+        let show = document.querySelector("#showButton");
+        let hide = document.querySelector("#hideButton");
+
+
+        let pa = document.querySelector('#parent');
+        let ch = document.querySelector('#child');
+        
+        // 이벤트 전파
+        pa.addEventListener('click', paF, false);
+        ch.addEventListener('click', chF);
+
+        function paF(){
+            alert('부모이벤트 발생');
+        }
+
+        function chF(){
+            alert('자식이벤트 발생');
+            event.stopPropagation();  // 이벤트 전파 멈춤
+        }
+
+        // 이벤트 발생 -> 함수 연결(이벤트 처리(핸들러))
+        show.onclick = showButton;
+        hide.onclick = hideButton;
+
+
+
+        // 설명 보기 함수 선언
+        function showButton(){
+            document.querySelector("#contents").style.display = 'block';
+            document.querySelector("#showButton").style.display = 'none';
+        }
+
+
+        // 설명 닫기 함수 선언
+        function hideButton(){
+            document.querySelector("#showButton").style.display = 'block';
+            document.querySelector("#contents").style.display = 'none';
+        }
+
+        // 요소 생성
+        // <p class = "accent"> 주문완료 </p>
+        let np = document.createElement('p'); // 요소 (p태그) 만들고
+        let nt = document.createTextNode('주문완료');   // 텍스트 노드 (글자 작성)
+        np.appendChild(nt); // 태그에 내용을 자식으로 추가 nt 에 붙였다
+        np.setAttribute('class', 'accent');  // 태그에 속성 넣기
+        document.querySelector('#createP').appendChild(np) // 원하는 위치에 자식으로 붙임
+    </script>
+</body>
+</html>

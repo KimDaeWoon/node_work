@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적</title>
+</head>
+<body>
+    <script>
+        // 2
+
+        function sum(min, max){
+            let sum = 0;
+            for(let i = min; i <= max; i++){
+                sum += i;
+            }
+            return sum
+        }
+        // 실행 => 호출
+        let result = sum (4,9); // sum 의 값을 result 에 저장
+        console.log(`합 = ${result}`);
+
+
+        // 3
+        //총점 계산
+        //(a)
+        function sungjuk(name, kor, eng, math){
+            let sum = kor + eng + math;
+            let avg = Math.round(sum/3);
+            let grade = '';
+            switch(Math.floor(avg / 10)){
+                case 10 :
+                case 9 : grade = 'A'; break;
+                case 8 : grade = 'B'; break;
+                case 7 : grade = 'C'; break;
+                case 6 : grade = 'D'; break;
+                default : grade = 'F'; 
+            }
+            console.log(`${name} \t ${sum} \t ${avg} \t ${grade}`)
+        }
+        console.log(`이름 \t 총점 \t 평균 \t 등급`)
+        sungjuk('aaa', 80, 75, 90);
+        sungjuk('bbb', 90, 88, 99);
+        sungjuk('ccc', 100, 85, 90);
+
+        //(b)
+        // function sungjuk(name, kor, eng, math){
+        //     let sum = kor + eng + math;
+        //     let avg = Math.round(sum/3);
+        //     let grade = '';
+        //     switch(Math.floor(avg / 10)){
+        //         case 10 :
+        //         case 9 : grade = 'A'; break;
+        //         case 8 : grade = 'B'; break;
+        //         case 7 : grade = 'C'; break;
+        //         case 6 : grade = 'D'; break;
+        //         default : grade = 'F'; 
+        //     }
+        //     return `${name} \t ${sum} \t ${avg} \t ${grade}`
+        // }
+        // console.log(`이름 \t 총점 \t 평균 \t 등급`)
+        // let data = sungjuk('aaa', 80, 75, 90);
+        // let data = sungjuk('bbb', 90, 88, 99);
+        // let data = sungjuk('ccc', 100, 85, 90);
+        // console.log(`${data}`);
+    </script>
+</body>
+</html>

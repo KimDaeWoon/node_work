@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js성적입력</title>
+</head>
+<body>
+    <ul>
+        <li>이름<input type="text" id="name2"></li>
+        <li>국어<input type="text" id="kor2"></li>
+        <li>수학<input type="text" id="math2"></li>
+        <li>영어<input type="text" id="eng2"></li>
+    </ul>
+    <button type="button" onclick="addBt()">추가</button>
+    <table>
+        <thead>
+
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script>
+        let name = document.querySelector("#name2");
+        let kor = document.querySelector("#kor2");
+        let math = document.querySelector("#math2");
+        let eng = document.querySelector("#eng2");
+        let lists = [];
+
+        function Student(name, kor, math, eng){
+            this.name = name;
+            this.kor = kor;
+            this.math = math;
+            this.eng = eng;
+        }
+
+        Student.prototype.getSum = function (){
+            return this.kor + this.math + this.eng;
+        }
+
+        Student.prototype.getAvg = function(){
+            return (Math.round(getSum()/3));
+        }
+
+        Student.prototype.getGrade = function(){
+            let grade = '';
+            switch(Math.floor(getGrade()/10)){
+                case 10 :
+                case 9 : grade = '수'; break;
+                case 8 : grade = '우'; break;
+                case 7 : grade = '미'; break;
+                case 6 : grade = '양'; break;
+                default : grade = '가';
+            }
+            return grade
+        }
+
+        function addBt(){
+            lists.push(new Student(name.value, Number(kor.value), Number(math.value), Number(kor.value)))
+            console.log(lists())
+            result();
+            rank();
+            print();
+        }
+
+        function result(){
+            lists[i].sum = lists[i].getSum();
+            lists[i].avg = lists[i].getAvg();
+            lists[i].grade = lists[i].getGrade();
+        }
+
+        function rank(){
+            for(i = 0; i < lists.length; i++){
+                let cnt = 1;
+                for(j = 0; j < lists.length; j++){
+                    if(lists[i].sum < lists[j].sum){
+                        cnt++;
+                    }
+                }
+                this.rank = cnt;
+            }
+        }
+
+        function print(){
+            table = `<thead>
+                        <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>`
+            table += `<tbody>`
+            for(i = 0; i < lists.length; i++){
+            table += `<tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>`
+            }
+            table += `</tbody>`
+            document.querySelector("#table1").innerHTML = table
+        }
+    </script>
+</body>
+</html>

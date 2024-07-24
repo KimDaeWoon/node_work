@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <div id="container">
+        <h1>계산기</h1>
+        <form>
+            <ul>
+                <p>수 1 : <input type="number" id="su1"></p>   
+                <p>수 2 : <input type="number" id="su2"></p>   
+                <p>결과 : <input type="number" id="su3"></p>   
+            </ul>
+            <ul>
+                <button type="button" id="plusBt">더하기</button>
+                <button type="button" id="minusBt">빼기</button>
+                <button type="button" id="duble1Bt">곱하기</button>
+                <button type="button" id="division1Bt">나누기</button>
+                <button type="reset" id="eraser1Bt">지우기</button>
+            </ul>
+        </form>
+    </div>
+    <script>
+
+        // 1
+        let plus = document.querySelector('#plusBt')
+        let minus = document.querySelector('#minusBt')
+        let duble1 = document.querySelector('#duble1Bt')
+        let division1 = document.querySelector('#division1Bt')
+        let eraser1 = document.querySelector('#eraser1Bt')
+        let su1 = document.querySelector('#su1')
+        let su2 = document.querySelector('#su2')
+        let su3 = document.querySelector('#su3')
+        // 2
+        plus.onclick = plusBt;
+        minus.onclick = minusBt
+        duble1.onclick = duble1Bt
+        division1.onclick = division1Bt
+        eraser1.onclick = eraser1Bt
+    
+        //3
+        function plusBt(){
+           su3.value =  Number(su1.value) + Number(su2.value)
+        }
+        function minusBt(){
+            su3.value =  Number(su1.value) - Number(su2.value)
+        }
+        function duble1Bt(){
+            su3.value =  Number(su1.value) * Number(su2.value)
+        }
+        function division1Bt(){
+            su3.value =  Number(su1.value) / Number(su2.value)
+        }
+        
+
+
+
+
+    </script>
+</body>
+</html>

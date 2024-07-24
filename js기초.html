@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js기초</title>
+</head>
+<body>
+    <h1>출력문</h1>
+    <script>
+        //출력문
+        // 알림창
+        // alert("hello javascript");  // 함수
+        //console.log("hello javascript");
+        //document.write("<h1>hello javascript</h1>");
+
+        //입력문
+        name = prompt("이름을 입력하세요", "홍길동");
+        //console.log(name);
+
+        //bool = confirm("수락하시겠습니까?"); // window data 있음
+        // console.log(bool)
+
+        //기본형
+        // let str = "안녕";
+        // let num = 777;
+        // let bool2 = true; // script data안에 있음
+        // let n = null;
+        // let ud;
+        // console.log(str);
+        // console.log(num);
+        // console.log(bool);
+        // console.log(n);
+        // console.log(ud);
+
+        // // 배열 : 여러 data 접근 방법 
+        // let sesons = ["봄","여름","가을","겨울"]
+        // console.log(sesons);
+        // console.log(sesons[1]);
+        // console.log(sesons.length);
+
+        // 객체
+        //let person = {
+        //     name : "홍길동",
+        //     age : 35,
+        //     job : "engineer",
+        //     eat : function(food) {//메소드 : 객체안에 들어 있는 함수
+        //     console.log(food + "를 먹어요");
+        //     }
+        // }
+
+        // console.log(person);
+        // console.log(person.age);
+        // console.log(person.eat("바나나"));
+        
+        //스코프 : 변수의 사용 범위
+        // var a = 888;
+        // console.log(a++);
+        
+        // let let1 = 999;
+        // console.log("window 영역 :" + this.a);
+        //console.log("script 영역 :" + this.let1);
+
+        // 사각형 너비 계산 = 가로 * 세로
+        // 가로 입력 
+        //let width = prompt("사각형의 너비 : ");
+        // 세로 입력
+       // let height = prompt("사각형의 높이 :");
+        // 너비 계산
+        //let area = width * height;
+        // 알림창 출력 
+        //alert("사각형의 너비 = " + area);
+        //alert(`사각형의 너비 = ${area}`)
+
+        let year = prompt("태어난 연도 :");
+        let age = 2024 - year;
+        //document.write(`태어난 연도는 ${year}, 나이는 ${age}살입니다`)
+        
+        //변수 값 교환 year 값은 age, age 값은 year 에 넣으라
+        year = 77;
+        age = 88;
+
+        let temp = year;
+        year = age;
+        age = temp
+        console.log(`year : ${year} age : ${age}`);
+
+    </script>
+</body>
+</html>

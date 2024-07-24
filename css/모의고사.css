@@ -1,0 +1,111 @@
+#container {
+  width: 1000px;
+  margin: 0 auto;
+  font-family: '맑은고딕';
+}
+header {
+  background-color: black;
+}
+h1 {
+  text-align: center;
+}
+header ul {
+  list-style: none;
+  padding: 0;
+}
+header nav {
+  height: 60px;
+}
+header li {
+  float: left;
+  line-height: 60px;
+}
+header a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: white;
+}
+header a:hover {
+  background-color: yellow;
+  color: black;
+  line-height: 60px;
+  
+}
+header li:last-child {
+  float: right;
+}
+#left {
+  box-sizing: border-box;
+  float: left;
+  width: 200px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+section {
+  float: left;
+  text-align: center;
+  width: 600px;
+  height: 500px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+form {
+  position: relative;
+  background-color: #ccc;
+  padding: 20px;
+  width: 500px;
+  left: 10px;
+}
+#center {
+  border: 0;
+}
+legend {
+  font-weight: bold;
+}
+section ul {
+  list-style: none;
+  padding: 0;
+}
+section li {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 5px;
+  padding: 5px;
+}
+#center label {
+  display: block;
+  float: left;
+  width: 130px;
+  padding: 0;
+}
+#center input {
+  display: inline-block;
+  width: 250px;
+  padding: 3px;
+}
+#level {
+  border: 0;
+}
+button {
+  size: 150px;
+  border: 0;
+  border-radius: 30px;
+  background-color: #fef;
+  padding: 15px;
+  font-weight: bold;
+}
+#right {
+  float: right;
+  text-align: center;
+  width: 200px;
+  height: 500px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+footer {
+  clear: both;
+  background-color: #ccc;
+  text-align: center;
+  line-height: 100px;
+}

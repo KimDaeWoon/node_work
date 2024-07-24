@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습연습</title>
+    <style>
+        #contents{
+            width: 900px;
+            margin: 0 auto;
+        }
+        img{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contents">
+        <h1>안녕 하세요</h1>
+        <img src="./img/Travel with MOKOKO.jpg" alt="adf">
+        <button type="button" id="showB">쇼 버튼</button>
+        <div id = "naeyong">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Aliquid commodi qui perferendis fugiat neque dolores omnis rerum, 
+                soluta aspernatur error repellendus officia similique asperiores doloremque ex dolorem laborum nobis. 
+                Odit?
+            </p>
+        </div>
+            <button type="button" id = "showN">none 버튼</button>
+    </div>
+    <script>
+        let show = document.querySelector('#showB')
+        let hide = document.querySelector('#showN')
+
+        show.onclick = showB;
+        hide.onclick = showN;
+
+        function showB(){
+            document.querySelector('#showB').style.display = 'block';
+            document.querySelector('#').style.display = 'none';
+
+        }        
+        function showN(){
+            document.querySelector('#showB').style.display = 'block';
+            document.querySelector('#').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

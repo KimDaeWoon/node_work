@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지셔닝</title>
+    <style>
+        /* #container{
+            width: 700px;
+            height: 700px;
+            margin: 0 auto;
+        } */
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: #c0c;
+            margin: 10px;
+            text-align: center;
+            /* line-height: 100px; */
+         
+        }
+        #box2{
+            position: relative; /* 자기 자신 기준으로 */
+            left: 50px;
+            bottom: 70px;
+            background-color: rgb(48, 181, 221) ; /* 더 중요 처리 */
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(to right,red 0,orange 10%,yellow 20%,green 30%,blue,rgb(3, 3, 99),purple);
+        }
+        .abs{
+            background-color: blueviolet;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+        .abs1{
+            left: 0;
+            top: 0;
+        }
+        .abs2{
+            top: 0;
+            right: 0;
+        }
+        .abs3{
+            left: 0;
+            bottom: 0;
+        }
+        .abs4{
+            right: 0;
+            bottom: 0;
+        }
+        .abs5{
+            left: 125px;
+            top: 125px;
+        }
+        .z1{
+            background-color: rgb(209, 43, 57);
+            left: 130px;
+            top: 130px;
+            /* z-index: ; */
+            /* visibility: hidden; */
+            /* opacity: 1; */
+        }
+        .z2{
+            background-color: #187718
+            /* right: 100px; */
+            /* bottom: 100px; */
+        }
+        #box3{
+            background-color: blue;
+            color: #fff;
+            font-weight: bold;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            line-height: 50px;
+            position: fixed;
+            right: 20px;
+            bottom: 30px;
+        }
+        #box4{
+            /* background: linear-gradient(to right, yellow, yellow 10%,red 10%, red 33%,blue 33%, blue 70%,green 70%, green 100%); */
+            background: repeating-linear-gradient(to right, yellow, yellow 10%,red 10%, red 33%,blue 33%, blue 70%);
+        }
+        #p_abs{
+            position: relative;;
+            width: 300px;
+            height: 200px;
+        }
+        #p_abs h1{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div id="container"> -->
+        <div id="box1">box1</div>
+        <div id="box2">
+            <div class="abs1 abs">abs1</div>
+            <div class="abs2 abs">abs2</div>
+            <div class="abs3 abs">abs3</div>
+            <div class="abs4 abs">abs4</div>
+            <div class="abs5 abs">abs5</div>
+            <div class="z1 abs">ind1</div>
+            <div class="z2 abs">ind2</div>
+        </div>    
+        <div id="box3">top</div>
+        <div id="box4">box4</div>
+        <div id="p_abs">
+            <img src="img/비숑.jpg" alt="비숑" width="300" height="200">
+            <h1>비숑짱</h1>
+        </div>
+    <!-- </div> -->
+</body>
+</html>

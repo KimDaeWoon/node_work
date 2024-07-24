@@ -1,0 +1,46 @@
+#container{
+    width: 960px; /* 건강 돌보기 css 교수님 하신것*/
+    margin: 0 auto;
+}
+
+header{
+    background-color: antiquewhite;
+    height: 100px;
+    overflow: hidden;
+}
+header h1{
+    float: left;
+    margin-top: 21.4px;
+}
+nav{
+    float: right;
+}
+nav li{
+    display: inline-block;
+    /* float: left; display 와 같이 쓰면 안됨 */
+    margin: 0 10px;
+}
+
+section{
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow: hidden;
+}
+article{
+    width: 310px;
+    float: left;
+}
+#other{
+    width: 100%;
+}
+
+article img{
+    width: 200px;
+    float: right;
+    margin-left: 5px;
+}
+footer{
+    background-color: bisque;
+    padding: 10px; /* 영역 까지 합치는것 */
+    text-align: center;
+}

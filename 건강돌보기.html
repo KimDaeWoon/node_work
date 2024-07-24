@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건강돌보기</title>
+    <!-- <link href="css/건강돌보기.css" rel="stylesheet"> -->
+    <style>
+        #container{
+            width: 960px;
+            margin: 0 auto;
+        }
+        section{
+            display: flex;
+            flex-wrap: wrap;
+            background-color: beige;
+            justify-content: space-around;
+        }
+        article{
+            width: 30%;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        #other{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>건강돌보기</h1>
+            <nav>
+                <ul>
+                    <li>애완견 종류</li>
+                    <li>강아지용품</li>
+                    <li>건강돌보기</li>
+                    <li>더불어살기</li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <article class="window">
+                <h1>검사와 접종</h1>
+                <ul type="square">
+                    <li>예방접종</li>
+                    <li>종합검진</li>
+                    <li>스케일링</li>
+                    <li>중성화수술</li>
+                </ul>
+            </article>
+            <article class="window">
+                <h1>예방접종</h1>
+                <ol type="a">
+                    <li>종합백신(DHPPL)</li>
+                    <li>코로나 장염</li>
+                    <li>켄넬코프</li>
+                    <li>광견병</li>
+                </ol>
+            </article>
+            <article class="window">
+                <p><strong>종합백신(DHPPL) :</strong> 다섯가지 질병에 대한 예방 접종</p>
+                <p><strong>코로나장염 :</strong> 코로나 바이러스성 장염을 예방하는 백신</p>
+                <p><strong>켄넬코프 :</strong> 켄넬코프 감기 예방 접종</p>
+                <p><strong>광견병 :</strong> 3개월 이상 된 강아지에게 1회 접종한 후 6개월 후 재접종한다. 매년 추가 접종을 해야 한다.</p>
+                <p> 태어난 첫 해에는 6~8주 후부터 2주 간격으로 <strong>총 5회 접종</strong>을 하고 그 다음부터는 1년에 한번씩 접종하면 된다.</p>
+            </article>
+            <article id="other">
+                <h1>애완견에 해로운 음식</h1>
+                <img src="img/비글.jpg" alt="비글">
+                <dl>
+                    <dt>닭뼈</dt>
+                    <dd>닭뼈는 개의 이빨로 꺠물수 없고 닭뼈를 그대로 삼키면 목이나 위를 찌를 수 있다.</dd>
+                    <dt>차가운 우유</dt>
+                    <dd>강아지는 몸이 미숙하여 설사의 원인이 될 수있다.</dd>
+                    <dt>양파</dt>
+                    <dd>개의 혈액에 한해 강한 독성을 가지고 있어 적혈구를 녹인다. 심하면  급성 빈혈로 목숨이 위태로울 수 있다. 파 종류는 모두 안좋다.</dd>
+                </dl>
+            </article>
+        </section>
+        <footer>
+            <p><i>Copyright namycom</i></p>
+        </footer>
+    </div>
+</body>
+</html>

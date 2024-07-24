@@ -1,0 +1,95 @@
+*{
+  box-sizing: border-box;
+  font-family: "맑은 고딕",굴림, 돋움;
+}
+#container{
+  width: 1000px;
+  margin: 0 auto;
+}
+header h1{
+  text-align: center;
+}
+nav{
+  overflow: hidden;
+  background-color: black;
+}
+nav li{
+  float: left;
+  list-style: none;
+}
+nav li:last-child{
+  float: right;
+}
+nav ul{
+  margin: 0;
+  padding: 0;
+}
+nav a{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+}
+nav a:hover{
+  background-color: yellow;
+  color: black;
+}
+aside{
+  float: left;
+  background-color: beige;
+  box-sizing: border-box;
+  width: 200px;
+  height: 500px;
+  text-align: center;
+}
+section{
+  float: left;
+  box-sizing: border-box;
+  width: 600px;
+  height: 500px;
+  text-align: center;
+}
+form{
+  width: 500px;
+  text-align: center;
+  background-color: #ddd;
+  margin: 0 auto;
+}
+form fieldset{
+  border: 0;
+}
+form legend{
+  font-weight: bold;
+}
+form ul{
+  padding: 0;
+}
+form li{
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.5);
+  border: 2px solid white;
+  list-style: none;
+  margin-bottom: 3px;
+}
+form label{
+  float: left;
+  width: 130px;
+}
+form input{
+  width: 250px;
+  padding: 3px;
+  margin: 2px;
+}
+button{
+  width: 150px;
+  border: 0;
+  border-radius: 30px;
+  background-color: #fef;
+  padding: 15px;
+}
+footer{
+  clear: both;
+  text-align: center;
+  background-color: aqua;
+  line-height: 80px;
+}

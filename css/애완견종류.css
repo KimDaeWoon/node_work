@@ -1,0 +1,75 @@
+#container{
+    width: 960px;
+    margin: 0 auto;
+}
+header{
+    background-color: blanchedalmond;
+    padding: 10px;
+    text-align: right;
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px;
+}
+nav a{
+    color: rgb(29, 201, 23);
+    text-decoration: none;
+    font-weight: bold;
+}
+section{
+    border: 2px solid #bbb;
+    padding: 10px;
+}
+#anchor{
+    text-align: center;
+}
+#anchor li{
+    display: inline-block;
+    margin: 10px;
+}
+#anchor li a{
+    text-decoration: none;
+    font-weight: bold;
+}
+#active{
+    border: 2px solid rgb(43, 15, 201);
+    padding: 10px;
+    border-radius: 20px;
+}
+#milde{
+    border: 2px dotted #f00;
+    padding: 10px;
+    border-radius: 20px;
+}
+#angry{
+    border: 2px dashed #ff0;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+figure{
+    text-align: center;
+}
+.wordRight{
+    display: block; /* <a테그>는 인라인 레벨(해당 콘텐츠 영역만 차지) 이기에 block 처리 */
+    text-align: right;
+    margin-right: 10px;
+    padding: 5px;
+}
+aside{
+    background-color: rgb(190, 31, 124);
+    padding: 10px;
+}
+footer{
+    background-color: aqua;
+    padding: 0 10px;
+    color: #f00;
+    text-align: center;
+}
+footer p{
+    margin-top: 0;
+}
+img{
+    width: 100px;
+    height: 100px;
+}

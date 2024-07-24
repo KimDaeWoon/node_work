@@ -1,0 +1,36 @@
+#container{
+    width: 500px;
+    margin: 0 auto;
+}
+img{
+    width: 500px;
+}
+#check{
+    border: 1px solid #ccc;
+}
+#check > h2, #check > h3, #check > p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2;
+}
+h1{
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    margin: 0;
+}
+h2, h3{
+    color: red;
+    font-weight: bold;
+}
+.textColor{
+    color: blue;
+}
+p{
+    font-weight: bold;
+}
+.textSize{
+    font-size: 12px;
+}

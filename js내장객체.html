@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체</title>
+</head>
+<body>
+    <h1>js 내장객체</h1>
+    <script>
+        // 날짜 표시
+
+        let today = new Date();
+        console.log(today);
+        console.log(today.getFullYear()); // today에 매소드 접근 해서 FullYear 가져와! 호출 해줘야 됨
+        console.log(today.toLocaleString());
+        console.log(today.toLocaleDateString());
+        console.log(today.getMonth()+1);   // 0부터 시작 하기에 +1 해준다
+        console.log(today.getDate());
+        console.log(today.getDay());  // 요일 번호 0 일요일 1 월요일 2 화요일 ... 6 토요일
+        let dayNum = today.getDay();
+        switch(dayNum){
+            case 0 : console.log('일요일'); break;
+            case 1 : console.log('월요일'); break;
+            case 2 : console.log('화요일'); break;
+            case 3 : console.log('수요일'); break;
+            case 4 : console.log('목요일'); break;
+            case 5 : console.log('금요일'); break;
+            default : console.log('토요일');
+        }
+        console.log(today.getHours());
+        console.log(today.getTime()); // 
+        console.log(new Date(1715059003197)); // 
+        console.log(new Date(1)); // 
+
+        // 올해 크리스 마스 까지 몇 일 남았을까요?
+        let xmax = new Date("2024-12-25");  // 2024,11,25 둘다 가능
+        console.log(xmax);
+
+        let remain = xmax -today;
+        remain = Math.floor(remain / (1000*60*60*24))
+        console.log(`${remain} 일 남았음`)
+
+        // 우리 만난지 몇 일
+        let metDate = new Date("2024-4-8");
+        let remain1 = today - metDate  ;
+        remain1 = Math.floor(remain1 / (1000*60*60*24))
+        console.log(`${remain1} 일 지났음`)
+
+        // lotto Number (다시)
+
+        let lotto = [];
+        for(let i = 1; i <= 5; i++){
+            for(let j = 1; j <= 6; j++){  //번호 갯수
+               let num = Math.floor(Math.random()*(45))+1;
+               if(lotto.indexOf(num) == -1){  // 중복체크
+                   lotto += `${num} \t`//줄바꿈 indexOf
+               }else{
+                j--;
+            }
+        }
+        lotto += `\n`
+    }
+    console.log(lotto)
+
+        // 정규 표현식 : 패턴을 만들고 -> 데이터가 패턴에 맞는지 체크
+        // 패턴에 맞는 데잍터 추출 , 대체할 때 사용
+            let tel = '010-1111-2222';
+            let re = /^\d{3}-\d{4}-\d{4}$/;
+            console.log(re.test(tel))
+
+
+            const target = 'Is this all there is?';
+            const regExp2 = /is/ig;
+            console.log(target.match(regExp2));
+            console.log(target.replace(regExp2,'LOVE'));
+
+            // string 객체
+            let str = '1A34b 7c9z ';
+            console.log(str.charAt(9)); // 띄어쓰기 빼고 문자만 갯수 확인
+            console.log(str.charCodeAt(4));
+            console.log(String.fromCharCode(98));
+            console.log(str.concat('XYZ'));
+            console.log(str.indexOf('b'));
+            console.log(str.match('b'));
+            console.log(str.replace('4b','b5'));
+            console.log(str.search('y'))
+            console.log(str.slice(3,7))
+            console.log(str.split(''))
+            console.log(str.substr(3,7))
+            console.log(str.trim())
+
+
+
+            
+
+
+
+
+
+
+    </script>
+</body>
+</html>

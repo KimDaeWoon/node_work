@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+</head>
+<body>
+    <h1>DOM : 문서 객체 모델</h1>
+    <h2 id = "hd">문서 객체 속성 변경</h2>
+    <img src="./img/Dear Friends MOKOKO.jpg" id ="moko" alt="MOKOKO" width="300px" height="300px">
+    <script>
+        let hd = document.querySelector('#hd')
+        document.querySelector('#hd').innerHTML = "이미지 변경"
+        hd.style.border = '1px solid #f00'
+        hd.style.backgroundColor = '#ccc'
+        let imgp = document.querySelector('#moko')
+        console.log(imgp.getAttribute('src'))
+        console.log(imgp.src);
+        imgp.src = './img/Dior 가방.jpg'
+        imgp.src.remove();
+        imgp.setAttribute('src', './img/Dear Friends MOKOMO.jpg')
+        imgp.src = './img/Dior 가방.jpg'
+        imgp.src.remove();
+    </script>
+</body>
+</html>

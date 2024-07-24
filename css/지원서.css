@@ -1,0 +1,35 @@
+#container{
+    width: 550px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    padding: 15px;
+    /* background-image: url(https://www.dailysecu.com/news/photo/202104/123449_145665_1147.png); */
+}
+fieldset{
+   border: 0;
+}
+fieldset li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+#people label{
+    display: inline-block;
+    width: 60px;
+}
+legend{
+    color: blue;
+    font-weight: bold;
+}
+button{
+    background-color: #ccc;
+    border-radius: 5px;
+}
+input:checked + label{
+    color:blue;
+}
+input:enabled{
+    background-color: yellow;
+}
+input:disabled{
+    background-color: #aaa;
+}

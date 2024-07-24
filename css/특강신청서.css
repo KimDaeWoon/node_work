@@ -1,0 +1,46 @@
+#container{
+    width: 700px;
+    margin: 0 auto;
+    border: 20px groove #000;
+    padding: 20px;
+    /* border-style: groove; */
+}
+form{
+    width: 500px;
+    margin: 0 auto;
+    /* background-color: blue; */
+}
+form li{
+    list-style: none;
+    margin-bottom: 5px;
+}
+fieldset{
+    border-radius: 10px;
+    /* background-image: url(https://i.namu.wiki/i/SFFqJSJI-jkmGZRssT6Fi3-G6tqw9jDxdQTO088zpwL5n3XuwND-P_0IK6Sau4_Ctp9ci2rho91Z92UEpRtqhg.svg); */
+    font-weight: bold;
+    color: rgb(79, 202, 22);
+    margin-bottom: 10px;
+}
+legend{
+    color: brown;
+    font-size: 20px;
+    font-weight: bold;
+}
+#applicant label{
+    display: inline-block;
+    width: 70px;
+}
+#end{
+    margin: 10px 10px;
+    text-align: center;
+}
+button{
+    /* background-color: #ccc; */
+    border-radius: 5px;
+    border: 0;
+}
+button img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

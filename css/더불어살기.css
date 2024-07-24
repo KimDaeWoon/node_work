@@ -1,0 +1,41 @@
+#container{
+    border: 1px solid #ccc;
+    width: 960px;
+    margin: 0 auto;
+}
+header{
+    background-color: blue;
+    text-align: right;
+    overflow: hidden;
+}
+header h1{
+    float: left;
+    color: #fff;
+}
+nav li{
+    margin-top: 20px;
+    display: inline-block;    
+}
+nav a{
+    color: #fff;    
+}
+section{
+    line-height: 2;
+    border: 1px solid blue;
+}
+
+img{
+    float: right;
+    height: 360px;
+    width: 300px;
+    margin-top: 20px;
+}
+footer{
+    text-align: center;
+    clear: both;
+    background-color: blue;
+    /* height: 100px; */
+    /* line-height: 6; */
+    padding: 10px;
+    color: #fff;
+}

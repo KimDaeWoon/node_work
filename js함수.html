@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js함수</title>
+    <style>
+        table{
+          border: 1px solid #883434;
+          border-collapse: collapse;
+          background-color: aqua;
+        }
+        td{
+          border: 1px solid #553183;
+        }
+    </style>
+</head>
+<body>
+    <h1>js 함수</h1>
+    <script>
+        // 함수 
+        // 함수 정의 (min 에서 max 까지 합 계산)
+        
+        function sum(min, max){  // 함수 선언 : 함수의 내용을 정의
+            let result = 0;
+            for (let i = min; i <= max; i++){
+                result += i;
+            }
+            return result;
+        }
+        console.log(sum(1, 100));  // 함수 호출 (실행)
+
+
+        // 두 값을 입력 받아서 더한 결과를 돌려주는 함수
+        // 함수 명 : plus
+
+        function plus(a, b){    
+            let result = 0;
+                result = a + b;
+                return result; 
+            }
+            console.log(plus(50 , 10));
+        
+
+        // 두 값을 입력 받아서 곱한 결과를 돌려주는 함수
+        // 함수 명 : multy
+        function multy(a, b){    
+            let result = 0;
+                result = a * b;
+                return result;  
+            }
+            console.log(multy(50 , 10));
+
+        // min 에서 max 까지의 3의 배수면서 7의 배수도 되는 수의 갯수 계산
+        // 함수 정의 => 실행 (20 에서 1000까지)
+
+        function su (min, max){
+            let cnt = 0;
+            for (i = min; i <= max; i++){
+                if ( i % 3 == 0 && i % 7 == 0){  // && = and , || = or 암기
+                    cnt++;
+                }
+            }return cnt;
+        }
+        console.log(su(20 , 1000));
+
+        // 행/열 입력 받아서 표를 만드는 함수
+        
+        function CreateTable (x , y){
+            let table = `<table>`;
+            for(let i = 1; i <= x; i++ ){
+                table += `<tr>`
+                    for (let j = 1; j <= y; j++){
+                        table += `<td>  ${i} x ${j}   </td>`
+                    }
+                table += `</tr>`
+            }
+            table += `</table>`;
+            return table;
+        } 
+        document.write(CreateTable(5, 6));
+        console.log(CreateTable(5, 6))
+
+
+        //콜백 함수 : 함수의 매개 변수 값으로 전달되는 함수
+
+        function done(coffee){
+            console.log(`${coffee} 준비 완료`);
+
+        }
+        function order(coffee, callFunc){
+            console.log(`${coffee} 주문 접수`);
+            setTimeout(() => {callFunc(coffee);}, 3000)  // function(){callFunc}
+        }
+        order('아메리카노', done);
+        order('카푸치노', done);
+
+        // 리턴 값으로 함수 이용
+        function rFunc(name){
+            let output = `Hello ${name}`;
+            return function(){
+                return output;
+            }
+        }
+        let r1 = rFunc('web');
+        let r2 = rFunc('javascript');
+        console.log(r1());
+        console.log(r2());
+
+        // 클로저 
+        // 일치
+        let inc = function(){
+            let num = 0;
+            return ++num;
+        }
+        console.log(inc());
+        console.log(inc());
+        console.log(inc());
+
+        // 증가
+
+        let inc1 = (function(){
+            let num = 0;
+            return function(){
+                return ++num;
+            }
+        })();
+        console.log(inc1());
+        console.log(inc1());
+        console.log(inc1());
+        
+        // 펼침 연산자
+        let arr = [1,2,3,4,5,6,7,8];
+        function arrSum(x, y, ...argArr){ // 나머지 파라미터 : 인수값을 배열 로 저장 
+            let result = x + y;
+            console.log(argArr);
+            for(let i = 0; i < argArr.length; i++){
+                result += argArr[i];
+            }
+            return result;
+        }
+        console.log(arrSum(...arr))  // 펼침연산자 -> 값을 하나 하나 풀어줌
+
+        // 변수의 스코프
+        var a = 1;
+        var b = 5;
+
+        function outfunc(){
+            function innerfunc(){
+                a = b;
+            }
+            console.log(a);
+
+            a = 3;
+            b = 4;
+            innerfunc();
+            console.log(a);
+            var b =2; // 호이스팅 때문에 b 라는 방이 잡혀 있음
+            console.log(b);
+        }
+        outfunc(); 
+        console.log(b);
+        
+    </script>
+</body>
+</html>

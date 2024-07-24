@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>과제</h1>
+    <ul>
+      <li>이름 <input type="text" id="name1" placeholder="예 : 홍길동" /></li>
+      <li>국어 <input type="number" id="kor1" /></li>
+      <li>영어 <input type="number" id="eng1" /></li>
+      <li>수학 <input type="number" id="math1" /></li>
+      <li>총점 <input type="number" id="total" /></li>
+      <li>평균 <input type="number" id="avg1" /></li>
+      <li>등급 <input type="number" id="grade1" /></li>
+      <li>석차 <input type="number" id="level1" /></li>
+
+    </ul>
+    <button type="button" onclick="addBt()">추가</button>
+    <button type="reset" >삭제</button>
+    <table border="1" cellpadding="20">
+      <thead>
+        <tr>
+          <td>번호</td>
+          <td>이름</td>
+          <td>국어</td>
+          <td>수학</td>
+          <td>영어</td>
+          <td>총점</td>
+          <td>평균</td>
+          <td>등급</td>
+          <td>석차</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+
+
+
+      
+
+
+
+      function addBt() {
+        // let eraser11 = document.querySelector('resetBt');
+        let name = document.querySelector('#name1');
+      let kor = document.querySelector('#kor1');
+      let eng = document.querySelector('#eng1');
+      let math = document.querySelector('#math1');
+      let total = document.querySelector('#total1');
+      let avg = document.querySelector('#avg1');
+      let grade = document.querySelector('#grade1');
+      let rank = document.querySelector('#rank');
+      let tbody = document.querySelector('tbody');
+
+      let newtr = document.createElement('tr'); // createElement 문서 객체 생성
+      let td1 = document.createElement('td');
+      let td2 = document.createElement('td');
+      let td3 = document.createElement('td');
+      let td4 = document.createElement('td');
+      let td5 = document.createElement('td');
+      let td6 = document.createElement('td');
+      let td7 = document.createElement('td');
+      let td8 = document.createElement('td');
+      let td9 = document.createElement('td');
+        
+
+        grade.value =
+          (Number(kor.value) + Number(eng.value) + Number(math.value)) / 3;
+
+
+        td1.innerHTML = tbody.rows.length + 1;
+        td2.innerHTML = name.value;
+        td3.innerHTML = kor.value;
+        td4.innerHTML = eng.value;
+        td5.innerHTML = math.value;
+        td6.innerHTML = Number(kor.value) + Number(eng.value) + Number(math.value)
+        td7.innerHTML = (Number(kor.value) + Number(eng.value) + Number(math.value)) / 3;
+        // td6.innerHTML = grade.value;
+        switch (Math.floor(grade.value / 10)) {
+          case 10:
+          case 9:
+            td8.innerHTML = '수';
+            break;
+          case 8:
+            td8.innerHTML = '우';
+            break;
+          case 7:
+            td8.innerHTML = '미';
+            break;
+          case 6:
+            td8.innerHTML = '양';
+            break;
+          default:
+            td8.innerHTML = '가';
+        }
+
+        //td9.innerHTML = rank.value;
+        // 총점 비교 석차 관리 tr 에 대해 5번째 td 순번으로 순위 결정
+        // let cnt = 1;
+        // for(){
+        //   cnt++;
+        //   td9.innerHTML = 
+        // }
+
+
+
+        newtr.append(td1); // append부모 노드에 자식 노드를 추가 하는 메서드
+        newtr.append(td2);
+        newtr.append(td3);
+        newtr.append(td4);
+        newtr.append(td5);
+        newtr.append(td6);
+        newtr.append(td7);
+        newtr.append(td8);
+        newtr.append(td9);
+        tbody.appendChild(newtr); // appendchild 요소를 붙인다
+
+      }
+    </script>
+  </body>
+</html>

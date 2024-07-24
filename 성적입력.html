@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적입력</title>
+    <style>
+        table, th, tr, td{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>과제</h1>
+    <ul>
+      <li>이름 <input type="text" id="name1" placeholder="예 : 홍길동" /></li>
+      <li>국어 <input type="text" id="kor1" /></li>
+      <li>영어 <input type="text" id="eng1" /></li>
+      <li>수학 <input type="text" id="math1" /></li>
+    </ul>
+    <button type="button" onclick="addBt()">추가</button>
+    <table id = "table1"></table>    
+    <script>
+        // 문서에 필요한 id 접근 -> 변수에 저장
+        let name = document.querySelector("#name1")
+        let kor = document.querySelector("#kor1")
+        let eng = document.querySelector("#eng1")
+        let math = document.querySelector("#math1")
+        let total = document.querySelector("#total1")
+        let getAvg = document.querySelector("#getAvg1")
+        let getGrade = document.querySelector("#getGrade1")        
+        let lists = []
+
+
+        function Student(name, kor, math, eng){
+            this.name = name;
+            this.kor = kor;
+            this.math = math;
+            this.eng = eng;
+        }
+
+        // 메소드 만들기
+        // getGrade 추가
+        Student.prototype.getSum = function(){
+            return this.kor + this.eng + this.math 
+        }
+        Student.prototype.getAvg = function(){
+            return Math.round(this.getSum()/3)
+        }
+
+        Student.prototype.getGrade = function(){
+            let grade = ""
+            switch(Math.floor(this.getAvg()/10)){
+                    case 10 :
+                    case 9 : grade = '수' ; break;
+                    case 8 : grade = '우' ; break;
+                    case 7 : grade = '미' ; break;
+                    case 6 : grade = '양' ; break;
+                    default : grade = '가' ;
+                } 
+                return grade;
+        }
+
+        Student.prototype.print = function(){
+            return `${this.name} \t ${this.getSum()} \t ${this.getAvg()} \t ${this.getGrade()}`
+        }
+
+        function addBt(){            
+            lists.push(
+                new Student(name.value, Number(kor.value), Number(eng.value), Number(math.value)));
+                console.log(lists);
+            result();
+            rank();
+            print();
+        }
+
+        function result(){
+            for(let i = 0; i < lists.length; i++){
+                lists[i].sum = lists[i].getSum()// 배열 의 점수를 총점을 구해서 객체에 key 추가
+                lists[i].avg = lists[i].getAvg()// 배열 의 점수를 총점을 구해서 객체에 key 추가
+                lists[i].grade = lists[i].getGrade()// 배열 의 점수를 총점을 구해서 객체에 key 추가
+            }
+        }
+
+        function rank(){
+            for (let i = 0; i < lists.length; i++ ){
+                let cnt = 1;
+                for(let j = 0; j < lists.length; j++){
+                   if(lists[i].sum < lists[j].sum){                    // 총점 나머지 와 비교
+                       cnt++;
+                   } 
+                }
+                lists[i].rank = cnt;
+            }
+        }
+        function print(){
+            let table = `<thead>
+                          <tr>
+                            <th>번호</th>
+                            <th>이름</th>
+                            <th>국어</th>
+                            <th>수학</th>
+                            <th>영어</th>
+                            <th>총점</th>
+                            <th>평균</th>
+                            <th>등급</th>
+                            <th>석차</th>
+                          </tr>
+                        </thead>`
+
+            table += `<tbody>`
+                for (let i = 0; i < lists.length; i++){
+                    table += `
+                            <tr>
+                                <td>${i +1}</td>
+                                <td>${lists[i].name}</td>
+                                <td>${lists[i].kor}</td>
+                                <td>${lists[i].eng}</td>
+                                <td>${lists[i].math}</td>
+                                <td>${lists[i].sum}</td>
+                                <td>${lists[i].avg}</td>
+                                <td>${lists[i].grade}</td>
+                                <td>${lists[i].rank}</td>
+                            </tr>`
+                }
+                table +=`</tbody>`
+                document.querySelector('#table1').innerHTML = table
+            }
+    </script>
+</body>
+</html>

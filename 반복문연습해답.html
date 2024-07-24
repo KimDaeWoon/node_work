@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제 답</title>
+    <style>
+        table{
+          border: 1px solid #883434;
+          border-collapse: collapse;
+          
+        }
+        td{
+          border: 1px solid #553183;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+
+//1 번 
+// let sum = 0;
+// let oddSum = 0;
+// let evenSum = 0;
+// for(let i = 1; i <= 100; i++){
+//     sum = sum + i;
+//     if (i % 2 == 0){
+//         evenSum += i;
+//     }else{
+//         oddSum += i;
+//     }
+// }
+// console.log(`홀 수 합 : ${oddSum} , 짝수 합 : ${evenSum} 전체 합 : ${sum}`)
+
+//2 번
+
+// let sum5 = 0;
+// for(let i = 1; i <= 100; i++){
+//     if(i % 5 == 0)
+//     sum5 += i;
+// }
+// console.log(`5의 배수 의 합 : ${sum5}`)
+
+
+//3 번
+// let fact = 1;
+// let n = Number(prompt('숫자를 입력 해주세요!'));
+// for(i = n; i >= 1; i--){
+//     fac *= i;
+// }
+// console.log(`${n}! = ${fac}`);
+
+//4 번
+let face = 0;
+let end = 0;
+for(let i = 2; i <=9; i++){
+    console.log(` ${i}단 `)
+    for(let j = 1; j <= 9; j++){
+        console.log(`${i} x ${j} = ${i*j}`)
+    }
+}
+
+//5 번
+
+// let numF = prompt('숫자를 입력 해주세요')
+// if(numF != null) {
+//   if(numF % 4 == 0){
+//     console.log(`${numF}는 4의 배수`);
+//   }else{
+//     console.log(`${numF}는 4의 배수 아님`);
+//   }
+// }else{
+//   alert(`잘못 입력 하였습니다`);
+// }
+
+//6 번
+// let person = prompt('몇 명 입장 하였나요?')
+// let col = prompt('한 줄에 몇명 앉을 껀가요?')
+// let row = Math.ceil(person/col)
+// let cnt = 0;
+// let layout = '<table>';
+// for(let i = 1; i <= row; i++){
+//   layout += `<tr>`
+//   for (let j = 1; j <= col; j++){
+//     cnt++;
+//     layout += `<td> 좌석 ${cnt} \t  </td>`
+//     if (cnt >= person) break;
+//   }
+//   layout += '</tr>'
+// }
+// layout += `</table>`
+// document.write(layout)
+
+
+// let person = prompt('몇 명 입장 하실껀가요?')
+// let col = prompt('한줄에 앉을 사람 수 를 구하세요')
+// let cnt = 0;
+// let row = Math.ceil(person/col)
+// for(i = 1; i <= row; i++){
+//   for(j = 1; j <= col; j++){
+//     cnt++;
+//     document.write(`좌석 ${cnt}`)
+//     if (cnt >= person) break;
+//   }
+// }
+// do
+
+// //7 번.
+
+
+let su3 = '3 ';  // 3의 배수 저장
+let cnt3 = 1;  //개수 체크
+let num3 = prompt('숫자를 입력 하세요');
+for(let i = 4; i <= num3; i++){
+    if( i % 3 == 0 ){
+         cnt3++
+         su3 += `,${i} `;
+    }
+}
+ console.log(`${su3} \n n까지의 3의 배수 개수 : ${cnt3} `);
+
+
+// //8 번
+// // (1)
+//  let stars = '';
+// for (let i = 1; i <= 5; i++){
+//   for (let j = 1; j <= i; j++){
+//     stars += '*';
+//   }
+//   stars += '\n'
+// }
+// console.log(stars)
+
+
+// // (2)
+// stars = '';
+// for(let i = 1; i <= 5; i++){
+//   for(let b = 1 ; b <= 5 - i; b++){
+//     stars += ' ';
+//   }
+//   for(let s = 1; s <= i; s++){
+//     stars += '*';
+//   }
+//   stars += '\n';
+// }
+// console.log(stars)
+
+
+
+// // 9 번
+
+// stars = '';
+// for(let i = 1; i <= 5; i++){
+//   for(let b = 1; b <= (10 - 2*i)/2; b++ ){
+//     stars += ' ';
+//   }
+//   for(let s = 1; s <= 2*i-1; s++){
+//     stars += '*';
+//   }
+//     stars += '\n';
+//   }
+//   console.log(stars)
+
+// for(let i = 1; i <= 4; i++){
+//   for(let b = 1; b <= (2*i)/2; b++){
+//     stars += ' ';
+//   }
+//   for(let s = 1; s <= 9-2*i; s++){
+//     stars += '*';
+//   }
+//   stars += '\n'
+// }
+// console.log(stars)
+
+// 모래시계
+// stars = '';
+// for(let i = 1; i <= 4; i++){
+//   for(let b = 1; b <= (2*i)/2; b++){
+//     stars += ' ';
+//   }
+//   for(let s = 1; s <= 9-2*i; s++){
+//     stars += '*';
+//   }
+//   stars += '\n'
+// }
+
+// for(let i = 2; i <= 5; i++){
+//   for(let b = 1; b <= (10 - 2*i)/2; b++ ){
+//     stars += ' ';
+//   }
+//   for(let s = 1; s <= 2*i-1; s++){
+//     stars += '*';
+//   }
+//     stars += '\n';
+//   }
+//   console.log(stars)
+
+  // 구구단
+  // layout = ' ';
+  // layout += ('<table>')
+  // for(j = 1; j <= 9; j++){
+  //   layout += ('<tr>')
+  //   for(i = 2; i <= 9; i++){
+  //     layout += `<td> ${i} x ${j} = ${j * i} </td>`;
+  //   }
+  //   layout += ('</tr>')
+  // }
+  // layout += ('</table>')
+  // document.write(layout);
+
+
+// for(let i = 0; i < 5; i++)  {
+//   for(let j = 4; j > i; j--)  {
+//     document.write('&nbsp');
+//   }
+//   for(let j = 0; j <= i; j++)  {
+//     document.write('*');
+//   }
+//   for(let j = 1; j <= i; j++)  {
+//     document.write('*');
+//   }
+//   document.write('<br>');
+// }
+
+// for(let i = 0; i < 4; i++)  {
+//   for(let j = 0; j <= i; j++)  {
+//     document.write('&nbsp');
+//   }
+//   for(let j = 4; j > i; j--)  {
+//     document.write('*');
+//   }
+//   for(let j = 3; j > i; j--)  {
+//     document.write('*');
+//   }
+//   document.write('<br>');
+// }
+
+
+// 1에서 10까지 수 중에 3의 배수이면 *출력, 나머진 숫자 출력
+// 1 2 * 4 5 ** 7 8 *** 10
+  // let threeN = 0 ;
+  // let sum = 0;
+  // for (let i = 1; i <= 10; i++){
+  //   if(i % 3 == 0) {
+  //     for(let j = 1; j <= i/3; j++){
+  //       threeN += '*'
+  //     }
+  //   }else{
+  //     threeN += ` ${i} `
+  //   }
+  // }
+  // console.log(`${threeN}`)
+
+
+// 행렬을 입력 받아서 
+// 행 x 열의 표 만들기
+// 문서에 출력
+
+  // let row = prompt('줄을 입력 하세요')
+  // let col = prompt('행을 입력 하세요')
+  // let table = `<table>`;
+  //   for(let i = 1; i <= row; i++){
+  //     table += `<tr>`;
+  //       for(let j = 1; j <= col; j++){
+  //         table += `<td> (${i}, ${j}) </td>`;
+  //       }
+  //     table += `</tr>`;
+  //   }
+  //   table += `</table>`;
+  //   document.write(table)
+    </script>
+</body>
+</html>

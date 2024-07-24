@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 연습</title>
+    <style>
+        table {
+            text-align: center;
+        }
+        tr, td {
+            padding: 10px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>반복문 연습</h1>
+    <script>
+        // 1. 1~100까지 홀수 합, 짝수 합
+        let even = 0;
+        let odd = 0;
+        for(let i = 1; i <= 100; i++) {
+            if(i % 2 == 0) even += i;
+            else odd += i;
+        }
+        console.log(`홀수 합 : ${odd}\n짝수 합 : ${even}`);
+
+        // 2. 1~100까지 5의 배수 합
+        let sum = 0;
+        for(let i = 1; i <= 100; i++) {
+            if(i % 5 == 0) sum += i;
+        }
+        console.log(`5의 배수 합 : ${sum}`);
+
+        // 3. 숫자n을 입력받아 n!(팩토리얼) 계산
+        let num = Number(prompt("숫자 입력해라","3"));
+        let result = 1;
+        for(let i = num; i >= 1; i--) {
+            result *= i;
+        }
+        console.log(`n(입력받은수) 팩토리얼 : ${result}`);
+
+        // 4. 2단~9단 구구단
+        for(let i = 2; i <= 9; i++) {
+            console.log(`=== ${i}단 ===`);
+            let dan = "";
+            for(let j = 1; j <= 9; j++) {
+                dan += `${i} x ${j} = ${i*j}\n`;
+            }
+            console.log(dan);
+        }
+
+        // 5. 숫자를 입력받아 4의 배수인지 출력
+        num = Number(prompt("4의 배수인지 확인할 숫자 입력"));
+        if(num == null || num == 0) {
+            
+        } else if(num % 4 == 0) {
+            console.log(`${num}은(는) 4의 배수임`);
+        } else {
+            console.log(`${num}은(는) 4의 배수아님`);
+        }
+
+        // 6. 1~n(입력받은수)까지중 3의 배수 출력 & 갯수 출력
+        num = Number(prompt("3의 배수 출력","24"));
+        let cnt = 0;
+        let third = "";
+        for(let i = 1; i <= num; i++) {
+            if(i % 3 == 0) {
+                cnt++;
+                third += ` ${i}`;
+            }
+        }
+        console.log(third);
+        console.log(`${num}까지의 3의 배수 갯수 : ${cnt}`)
+
+        // 7. 한줄에 앉을 사람수 입력받아 좌석배치 표 문서에 표로 출력
+        let people = Number(prompt("입장 인원 수","1000"));
+        let a_line = Number(prompt("한줄에 앉힐 인원 수","11"));
+        let line = Math.ceil(people / a_line);
+        let seat = 0;
+        if(people % a_line == 0) {
+            line = people / a_line;
+        } else {
+            line = Math.floor(people / a_line) + 1;
+        }
+        // 테이블 시작 (웹 출력)
+        document.write("<table>");
+        for(let i = 1; i<= line; i++) {
+            document.write("<tr>");
+            for(let j = 1; j <= a_line; j++) {
+                seat++;
+                if(seat <= people) {
+                    document.write(`<td>좌석 ${seat}</td>`);
+                } else {
+                    document.write(`<td></td>`);
+                }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        // 8. 별 출력
+        // 8-1
+        let star;
+        for(let i = 1; i <= 5; i++) {
+            star = "";
+            for(let j = 5; j >= 1; j--) {
+                if(j > i) {
+                    star += " ";
+                } else {
+                    star += "*";
+                }
+            }
+            console.log(star);
+        }
+        // 8-2
+        star = "";
+        for(let i = 1; i <= 5; i++) {  // 별
+            for(let j = 5; j >= 1; j--) { 
+                if(j > i) {
+                    star += " ";
+                } else {
+                    star += "*";
+                }
+            }
+            star += "\n";
+        }
+        console.log(star);
+
+        // 9. 별찍기 다이아몬드
+        let max = Number(prompt("별 최대 갯수", "9"));
+        star = "";
+        for(let i = 1; i <= max; i++) {
+            for(let j = 1; j <= max-i; j++) {
+                star += " ";
+            }
+            for(let j = 1; j <= i*2-1; j++) {
+                star += "*";
+            }
+            console.log(star);
+        }
+        star = "";
+        for(let i = max/2-1; i >= 1 ; i--) {
+            for(let j = 1; j <= max-i; j++) {
+                star += " ";
+            }
+            for(let j = 1; j <= i*2-1; j++) {
+                star += "*";
+            }
+            console.log(star);
+        }
+    </script>
+</body>
+</html>

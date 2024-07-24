@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <style>
+
+        form ul{
+            list-style: none;
+        }
+        form label{
+            width: 100px;
+            display: inline-block;
+        }
+        fieldset li{
+            margin-bottom: 5px;
+        }
+        #random ul label{
+            float: left;
+            width: 100px;            
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form action="login.jsp" method="post" name="login">
+            <fieldset>
+                <legend>로그인 정보</legend>
+                <ul>
+                    <li>
+                        <label for="u_id">아이디</label>
+                        <input type="text"  id="u_id" name="u_id">
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                       <label for="u_pw">비밀번호</label>
+                       <input type="password" id="u_pw" name="u_pw"> 
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>개인정보</legend>
+                <ul>
+                    <li>
+                        <label for="u_name">이름</label>
+                        <input type="text" id="u_name" name="u_name" size="10" value="hong" maxlength="6">
+                    </li>
+                    <li>
+                        <label for="serch">검색어</label>
+                        <input type="search" id="serch" name="search">
+                    </li>
+                    <li>
+                        <label for="url">사이트주소</label>
+                        <input type="url" id="url" name="url" placeholder="http://">
+                    </li>
+                    <li>
+                        <label for="mail">이메일</label>
+                        <input type="email" id="mail" name="mail">
+                    </li>
+                    <li>
+                        <label for="tel">전화번호</label>
+                        <input type="tel" id="tel" name="tel" placeholder="- 빼고 숫자만 입력하세요.">
+                    </li>
+                </ul>
+           </fieldset>
+           <fieldset>
+            <legend>선택하기</legend>
+            <ul>
+                <li>
+                    <label><input type="radio" name="color" value="red" checked>빨강</label>
+                    <label><input type="radio" name="color" value="blue">파랑</label>
+                    <label><input type="radio" name="color" value="green">초록</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="sns" value="facebook">페이스북</label>
+                    <label><input type="checkbox" name="sns" value="instargram" checked>인스타그램</label>
+                    <label><input type="checkbox" name="sns" value="tweeter">트위터</label>
+                </li>
+                <li>
+                    <label for="number">갯수입력</label>
+                    <input type="number" id="number" name="number" min="1" max="10" value="1" step="2">
+                </li>
+                <li>
+                    <label for="range">슬라이더</label>
+                    <input type="range" id="range" name="range" min="0" max="10" step="2" value="4">
+                </li>
+                <li>
+                    <label for="file">파일첨부</label>
+                    <input type="file" id="file" name="file">
+                </li>
+                <li>
+                    <label for="color">색상선택</label>
+                    <input type="color" id="color" name="color" value="#00ff00">
+                </li>
+            </ul>
+           </fieldset>
+           <fieldset>
+            <input type="submit" value="전송버튼">
+            <input type="reset" value="취소버튼">
+            <input type="button" value="새창열기" onclick="window.open()">
+           </fieldset>
+           <fieldset id="random">
+            <legend>기타태그</legend>
+            <ul>
+                <li>
+                    <label for="memo">메모</label>
+                    <textarea name="memo" id="memo" cols="40" rows="5"></textarea>
+                </li>
+                <li>
+                    <label for="select">색선택</label>
+                    <select name="select" id="select">
+                        <optgroup label="따뜻한색">
+                            <option value="red">빨강</option>
+                            <option value="pink">분홍</option>
+                            <option value="yellow">노랑</option>
+                        </optgroup>
+                        <optgroup label="차가운색">
+                                <option value="blue" selected>파랑</option>
+                                <option value="sky">하늘색</option>
+                                <option value="green">초록</option>
+                        </optgroup>
+                    </select>
+                </li>
+                <li>
+                    <label for="fruit">맛좋은 과일</label>
+                    <input type="text" id="f
+                    ruit" name="fruit" list="datalist">
+                    <datalist id="datalist">
+                        <option value="fineapple">파인애플</option> 
+                        <option value="strawberry">딸기</option>
+                        <option value="banana">바나나</option>
+                        <option value="watermelon">수박</option>
+                        <option value="kiwi">키위</option>
+                    </datalist>
+                </li>
+            </ul>
+           </fieldset>
+           <fieldset>
+            <legend>날짜데이터</legend>
+            <ul>
+                <li><label for="date">년월일</label></li>
+                <li><input type="date" id="date" name="date"></li>
+                <li><label for="time">시간</label></li>
+                <li><input type="time" id="time" name="time"></li>
+                <li><label for="datetime">날짜시간</label></li>
+                <li><input type="datetime-local" id="datetime" name="datetime"></li>
+            </ul>
+           </fieldset>
+        </form> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체(object)</title>
+</head>
+<body>
+    <h1>객체</h1>
+    <script>
+        //객체
+        let student = {
+            이름 : '홍길동',
+            국어 : '92',
+            영어 : '99',
+            수학 : '98'
+        }
+
+        // 객체 속성 삽입
+        console.log(student);
+        student.미술 = 100;
+        
+        // 객체 메소드 삽입
+        student.result = function(){
+            let output = '';
+            for(let key in this){
+                if(key != 'result'){
+                output += `${key} : ${this[key]} \n`;
+                }
+            }
+            return output;
+        }
+        
+        // 객체 속성 삭제
+        delete student.미술;
+
+        // 객체 속성 수정
+        student.국어 = 100;
+        console.log(student.result());
+
+        //생성자 함수 : 객체 생성  *** 중요
+        function Student(name, korean, math, english, science){
+            this.name = name,
+            this.korean = korean,
+            this.math = math,
+            this.english = english,
+            this.science = science
+        }
+        Student.prototype.sum = function(){
+            return this.korean + this.english + this.math + this.english + this.science;
+        }
+        Student.prototype.avg = function(){
+            return this.sum()/5;
+        }
+        let stu1 = new Student('홍길동', 80, 88, 90, 85, 100)
+        let stu2 = new Student('이몽룡', 80, 85, 90, 85, 100)
+        let stu3 = new Student('성춘향', 80, 88, 90, 85, 100)
+        // console.log(stu1.sum());
+        console.log(`${stu1.name} \t ${stu1.sum()} \t ${stu1.avg()}`)
+        console.log(`${stu2.name} \t ${stu2.sum()} \t ${stu2.avg()}`)
+        console.log(`${stu3.name} \t ${stu3.sum()} \t ${stu3.avg()}`)
+
+        
+        console.log(stu1 instanceof Student)
+        console.log(student instanceof Student)
+
+        // stu3을 출력
+        // key : value  (for in 문 출력)
+        for(let key in stu3){
+            console.log (`${key} : ${stu3[key]}`);
+        }
+
+        // 생성자 함수
+        function Product(name, weigh, charge){
+            this.name = name,
+            this.weigh = weigh,
+            this.charge = charge
+        }
+        Product.prototype.sum = function(w){
+            return w/this.weigh * this.charge;
+        }
+        let pro1 = new Product('삼겹살', 500, 1690); // 'pro1' = 인스턴스
+        let pro2 = new Product('소고기', 100, 9000)
+        console.log('가격 : ' + pro1.sum(500));
+        console.log('소고기 가격 : ' + pro2.sum(600));
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수강과목신청서</title>
+    <link href="./css/특강신청서.css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <h1>여름방학 특강 신청(HARVARD Summer Class)</h1>
+        <form action="login.jpg" method="post" name="login">
+            <fieldset>
+                <legend>수강과목</legend>
+                <ul>
+                    <li>
+                        <label for="text">영어회화(초급)</label>
+                        <input type="text" id="junier" name="time" value="오전 9:00-11:00" readonly>
+                    </li>
+                    <li>
+                        <label for="datalist">관심분야(영어)</label>
+                        <input type="text" name="type" id="choice" list="datalist">
+                        <datalist id="datalist">
+                            <option value="grammer">문법</option>
+                            <option value="voca">어휘</option>
+                            <option value="speaking">회화</option>
+                            <option value="listening">리스닝</option>
+                            <option value="news">뉴스청취</option>
+                        </datalist>
+                    </li>   
+                </ul>
+            </fieldset>
+            <fieldset id="applicant">
+                <legend>신청자</legend>
+                <ul>
+                    <li>
+                        <label for="text">아이디</label>
+                        <input type="text" name="u_id" id="u_id">
+                    </li>
+                    <li>
+                        <label for="password">비밀번호</label>
+                        <input type="password" name="u_pw" id="u_pw">
+                    </li>
+                    <li>
+                        <label for="text">이름</label>
+                        <input type="text" name="u_id" id="u_id" placeholder="공백없이 입력하세요">
+                    </li>
+                    <li>
+                        <label for="number">학번</label>
+                        <input type="number" name="number" id="number" placeholder="8자리학번">
+                    </li>
+                    <li>
+                        <label for="department">학과</label>
+                        <select name="department" id="department">
+                            <optgroup label="공과대학">
+                                <option value="Architectural">건축공학과</option>
+                                <option value="Mechanical" selected>기계공학과</option>
+                                <option value="Industrial">산업공학과</option>
+                                <option value="Electrical">전기전자공학과</option>
+                                <option value="Chemical ">화학공학과</option>
+                            </optgroup>
+                            <optgroup label="인문대학">
+                                <option value="History">사학과</option>
+                                <option value="Language">어문학부</option>
+                                <option value="Philosophy">철학과</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </fieldset>
+            <div id="end">
+                <button type="submit">
+                    <img src="img/강아지1.jpg"><figcaption>완료</figcaption>
+                </button>
+                <button type="reset">
+                    <img src="img/비숑.jpg"><figcaption>취소</figcaption>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적 처리1</title>
+</head>
+<body>
+<script>
+    function Student(name, kor, eng, math){
+        this.name= name,
+        this.kor = kor,
+        this.eng = eng,
+        this.math = math
+    }
+
+    Student.prototype.getSum = function(){
+        return this.kor + this.eng + this.math
+    }
+
+    Student.prototype.getAvg = function(){
+        return (this.getSum()/3);
+    }
+
+    Student.prototype.toResult = function(){
+        return `${this.name} \t ${this.getSum()} \t ${this.getAvg()}`
+    }
+    
+    let students = [
+        new Student ('장그래', 86, 98, 98),
+        new Student ('이상향', 88, 78, 92)
+    ];
+
+    console.log(`이름 \t 총점 \t 평균`)
+    console.log(`=====================`)
+    for (let i in students){
+        console.log(students[i].toResult());
+    }
+    console.log(`=====================`)
+
+</script>
+</body>
+</html>

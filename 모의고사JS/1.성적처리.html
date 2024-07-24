@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>성적처리</title>
+</head>
+<body>
+    <script>
+    // 1. 생성자 함수 생성
+      function Student(name, kor, eng, math){
+        this.name = name, // 객체 이름 
+        this.kor = kor, // 객체 이름 
+        this.eng = eng, // 객체 이름 
+        this.math = math // 객체 이름 
+      }
+
+    // 2. prototype 메서드 생성
+      Student.prototype.getSum = function(){  // prototype 공통으로 가지는 영역, 객체가 있는 값으로 하니 () 따로 받을 필요 없다
+        return this.kor + this.eng + this.math;
+      }
+
+      Student.prototype.getAvg = function(){
+        return this.getSum()/3 ;// this 는 함수만 오는것
+      }
+
+      Student.prototype.toResult = function(){
+        return `${this.name} \t ${this.getSum()} \t ${this.getAvg()}`  // ${} = 문자열 리턴 결과 화면에 보여주기 위해
+      }
+
+    // 3. 배열에 학생 객체 삽입  
+    // 방법 1
+      let students = [
+      new Student('장그래', 86,98,98),
+      new Student('이상향', 88,78,92)
+      ];
+;
+
+
+      // students.push(new Student('장그래', 86,98,98))//push는 입력, Student 객체에 data 삽입 
+      // students.push(new Student('이상향', 88,78,92))//push는 입력
+    
+
+    // 4. 성적 출력 
+      console.log(`이름 \t 총점 \t 평균`);
+      console.log(`=======================`);
+      for (let i in students){
+        console.log(students[i].toResult());
+      }
+      console.log(`=======================`)
+
+
+
+  </script>
+</body>
+</html>

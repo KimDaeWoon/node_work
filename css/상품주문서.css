@@ -1,0 +1,49 @@
+#container{
+    width: 960px;
+    margin: 0 auto;
+}
+form ul{
+    list-style: none;
+    margin:  20px;
+}
+form ul li{
+    margin-bottom: 5px;
+}
+form label{
+    display: inline-block;
+    width: 80px;
+}
+fieldset{
+    width: 500px;
+    margin: 20px;
+    border-radius: 20px;
+}
+form legend{
+    color: blueviolet;
+    font-weight: bolder;
+    font-size: 20px;
+}
+span{
+    color: red;
+    font-weight: bold;
+}
+#address ul label{
+    float: left;
+} 
+#order label{
+    float: left;
+    width: 180px;
+}
+/* #bottom{
+    display: inline-block;
+    text-align: center;
+    width: 500px;
+    margin: 0 40px 10px 40px;
+} */
+input:not([type=radio]){
+    border: 1px solid #00f;
+}
+fieldset:last-child{
+    border: 0;
+    text-align: center;
+}

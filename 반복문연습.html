@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 연습</title>
+</head>
+<body>
+    <script>
+        //1. 1에서 100까지 홀수합, 짝수합 구하기
+        // let odd = 0;
+        // let even = 0;
+        // for(let i = 1; i <= 100; i++){
+        //     if (i % 2 == 0){
+        //         odd += i;  
+        //     }else{
+        //         even += i;
+        //     }
+        // }
+        // console.log(`홀수 합 : ${odd}, 짝수합 : ${even}`)
+
+        //2. 1에서 100까지 5의 배수의 합을 구하기
+        // let sum = 0;
+        // for(let i = 1; i <= 100; i++){
+        //     if (i % 5 == 0){
+        //         sum += i; 
+        //     }
+        // }
+        // console.log(`5의 배수의 합은 : ${sum}`)
+
+
+        //3. 숫자 n을 입력 받아 n! 을 계산
+        // let n = 1; 
+        // let factorior = prompt('숫자를 입력 하세요');
+        // for (let i = 1; i <= n; i++){
+        //     factorior *= i;
+        // }
+        // document.write(`팩토리얼 : ${factorior}`)
+
+       
+
+        //4. 2단 ~ 9단 까지 구구단을 작성
+
+        let num1 = 0;
+        let num2 = 0;
+        for(let i = 1; i < 10; i++){
+            console.log(`${i}단 =====<div>`)
+            for (let j = 1; j < 10; j++){
+                console.log(`${i} X ${j} = ${i * j}`);
+            }
+            console.log(`</div>`)
+          }
+        // 5. 숫자를 입력 받아 4의 배수 인지 아닌지 출력 하세요
+        // 취소 버튼을 누르면 보여 주지 않음
+            // let su = 0;
+            // if(su != null){
+            //         if(i % 4 == 0){
+            //             su += i;
+            //         }
+            // }
+            // else{ 
+            //     null
+            // }
+            // document.write(`4의 배수 : ${su}`);
+
+        // 6. 변수 누적 마지막 결과 처리
+            // su = 0;
+            // num1 = 0;
+            // let cnt = 0;
+            // for(let i = 1; i <= n; i++){
+            //     if( i % 3 == 0 ){
+            //         num1 += i;
+            //     }
+            // }
+            // cnt++;
+            // console.log(`n까지의 3의 배수 개수 : ${cnt}`);
+        // 7. 모르겠다
+
+            // let person = prompt('입장객 수');
+            // let col = prompt('한 줄 사람 수');
+            // // let row = Math.ceil(person / col);
+            // let row = person / col ; 
+            // if(person % col != 0) row++;
+            // let cnt = 0; // 좌석번호 
+            // let layout = ''; // 배치도
+            // for(let i = 1; i<=row; i++){ // 줄 수
+            //     for(let j=1; j<=col; j++){ // 한 줄 사람수
+            //         cnt++
+            //         layout += `좌석 ${cnt} \t`;
+            //         if(cnt >= person) break;
+            //     }
+            //     layout += '\n'
+            // }
+            // console.log(layout);
+
+            //8. 
+            // let stars = '';
+            // for(let i = 1 ; i <= 5; i++){
+            //     for(let j = 1 ; j <= i; j++){
+            //         stars += '*';
+            // } 
+            //     stars += '\n';
+            // }
+            //     console.log(stars);
+            
+            //9. 
+            // let stars = '';
+            //      for(let i = 1; i <= 10; i++){
+            //         if (i % 2 == 1){
+            //             for(let j = 1 ; j <= i; j++){
+            //                stars += '*';
+            //                } 
+            //        stars += '\n';
+            //         }
+            //     }
+            //     console.log(stars);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+#container{
+    width: 960px;
+    margin: 0 auto;
+}
+header{
+    height: 100px;
+    background-color: pink;
+    color: white;
+    text-align: right;
+    overflow: hidden;
+}
+header h1{
+    /* line-height: 50px; */
+    float: left;
+    margin: 26.5px 0;
+
+}
+nav li{
+    line-height: 50px;
+    display: inline-block;
+    margin: 10px;
+}
+.window{
+    width: 310px;
+    height: 318px;
+    /* border: 1px solid #ccc; */
+    float: left;
+    margin: 5px;
+
+}
+#other{
+    width: 100%;
+    clear: both;
+}
+article img{
+    float: right;
+}
+footer{
+    clear: both; /* float 절취선 위로 올라가지 않는 의미 */
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+}

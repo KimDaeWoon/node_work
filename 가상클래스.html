@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스</title>
+    <style>
+        #container{
+            width: 500px;
+            margin: 0 auto;
+        }
+        nav{
+            background-color: #ccc;
+            overflow: hidden;
+        }
+        nav li{
+            float: left;
+            padding: 10px;
+            list-style: none;
+        }
+        nav li:last-child{
+            float: right;
+        }
+        nav li a{
+            width: 50px;
+            /* display: inline-block; */
+        }
+        a:link{
+            color: black;
+            text-decoration: none;
+        }
+        a:visited{
+            color: red;
+        }
+        /* a:hover{
+            background-color: yellow;
+            color: blue;
+        } */
+        a:active{
+            background: black;
+            color: #fff;
+        }
+        a:focus{
+            background: green;
+        }
+        li:hover{
+            background: blue;
+            color: #000;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        li:nth-child(even){
+            border-radius: 10px;
+            border: 1px solid #777;
+            background-color: yellow;
+        }
+        li:nth-child(odd){
+            background: yellowgreen;
+        }
+        h1::after{
+            content: " 마감임박!!!";
+            font-size: 20px;
+            background-color: rebeccapurple;
+            color: #fff;
+            padding: 2px;
+            position: relative;
+            top: -15px;
+        }
+        p::first-line{
+            color: blue;
+        }
+        p::first-letter{
+            background-color: yellow;
+            font-size: 32px;
+        }
+        ::selection{
+            background: #f0f;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ul>
+        </nav>
+        <h1>말티즈, 말티즈, 말티즈</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere fugit modi error nemo illum quidem blanditiis, harum accusantium ab! Nisi odit quos nostrum magnam labore aut ex quae voluptatum itaque.</p>
+    </div>
+</body>
+</html>
