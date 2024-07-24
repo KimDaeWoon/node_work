@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw1.html</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"
+  ></script>
+  </head>
+  <body>
+    <h1>이미지 슬라이더</h1>
+    <button>◀<button>
+    <img src="../img/강아지1.jpg" width="500" height="600" >
+    <button>▶<button>
+    <script>
+      let arr = [
+        "../img/강아지2.jpg",
+        "../img/강아지3.jpg",
+        "../img/비글.jpg",
+        "../img/귀여운강아지.jpg",
+      ];
+
+      let minus = 4;
+      $('button').first().on('click', function(){
+        minus--;
+        if(minus == -1){
+          minus = minus + 5;
+      }
+        // minus 가 0일때 다시 4로 
+        $('img').attr('src', arr[minus]);
+      })
+
+      //$('img').attr('src', arr[indexNumb])
+        let indexNumb = 0;
+        $('button').eq(2).on('click',function(){
+            indexNumb++;
+            if(indexNumb == 5){
+              indexNumb = indexNumb - 5;
+            }
+            $('img').attr('src', arr[indexNumb]);          
+        })
+
+
+      function moveR(){
+        $('img').attr('src', arr[indexNumb]);
+        indexNumb++;
+        if(indexNumb >= arr.length){
+          indexNumb=0;
+        }
+      }
+      window.setInterval(moveR, 2000);
+    </script>
+  </body>
+</html>

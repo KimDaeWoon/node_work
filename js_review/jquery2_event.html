@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery2_event.html</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .active {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <input />
+    <button id="btnAdd">추가</button>
+    <button id="btnToggle">토글</button>
+    <div>
+      <p>사과</p>
+      <p>바나나</p>
+      <p>오렌지</p>
+      <p>포도</p>
+    </div>
+    <script>
+      // p태그 클릭 => 배경색 바꾸기
+      $("p").on("click", function () {
+        $(event.target).toggleClass("active");
+      });
+
+      // $('p') 이것 자체가 배열 이기에 for 구문 안 써도 된다
+      $("#btnAdd").on("click", function () {
+        //$(event.target).css("backgroundColor", "yellow");
+        let txt = $("input").val();
+        $("div").append(`<p>${txt}</p>`);
+      });
+
+      // 토글
+      $("#btnToggle").on("click", function () {
+        $("div").fadeIn(); // hide/show
+      });
+    </script>
+  </body>
+</html>

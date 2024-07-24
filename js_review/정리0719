@@ -1,0 +1,121 @@
+restful 의미 알기
+rest server 의미 알기
+
+    web.yedam.app 도메인
+패키지 명 app.web.yedam 사용 한다
+
+src/main/java => pagkage => serverlet (tomcat 설정 해준다 // https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/http/HttpServletRequest.html)
+
+우클릭 source -> override/implement method//
+service(HttpServletRequest req, HttpServletResponse res)
+
+getWriter => client 쪽으로 메세지 전달
+
+json string {} [] 시작
+ex ) .. {"msg":"hello"} 
+
+json string 인지 xml string 인지
+res.setContentType("application/json");
+res.setContentType("text/xml; charset=UTF-8");
+
+server 1개로 웹, 앱 개발 가능 하게 연동 
+fetch("HelloServ") 이렇게 fetch("/HelloServ") 는 안됨
+
+Thread.sleep(3000);	// 3초 있다가 응답 
+
+동기 => 1개 끝나면 => 그다음것 처리 => 그다음것 처리
+비동기 => 1개 끝나지도 않고 다른것 같이 처리
+
+       (function(){})(); // 바로 함수 호출
+
+       page 이동없이 server로 data 받는 것 ajax
+
+       다운로드
+       https://search.maven.org/artifact/com.google.code.gson/gson/2.11.0/jar?eh=
+       lip 폴더 안에 jar 파일 붙여 넣기
+
+
+          body: `title=${title.value}&completed=${completed.value}`	// 질의 문자열 쿼리 string
+
+          javascript singleton 개념 알기
+
+
+
+
+--------------------------------------------------------------------
+           server로 보내기위한 방법
+--------------------------------------------------------------------
+
+          queryString
+          `이름 =값 &이름 =값`
+          JSONString
+          {이름 : 값, 이름 : 값}
+
+        crome Payload
+        FORM data
+        request 
+--------------------------------------------------------------------
+쿼리 스트링       //등록 : POST 방식 // queryString 방식 처리
+--------------------------------------------------------------------
+          btnInsert.addEventListener("click", function () {
+        let param = {
+          userId: userId.value,
+          title: title.value,
+          completed: completed.value,
+        };
+        fetch(url, {
+          method: "post",
+          // completed 이름 과 java 쪽 getParameter 요청 이름이 같아야 한다
+          body: `title=${title.value}&completed=${completed.value}`,	
+          
+          headers: {
+                  //"Content-Type": "application/json",		// json string
+                   'Content-Type': 'application/x-www-form-urlencoded', // query string
+           },
+          
+          /* headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify(param), */
+        })
+          .then((result) => result.json())
+          .then((result) => {
+            let newTag = `<div>${result.title}<button data-id ="${result.id}">조회</button></div>`;
+            divTodos.insertAdjacentHTML("afterbegin", newTag);
+          });
+      });
+
+
+
+      -----
+      request
+      header : method, content-Type
+      body : {}
+
+---------------------------------------------------------
+jquery 수업
+---------------------------------------------------------
+https://releases.jquery.com/
+-----------------------------
+prop
+attr
+
+append 부모의 자식으로 전달     
+appendTo 자식을 부모로 전달
+jquery *연산은 따로 Number 을 사용 하지 않아도 number 인식 가능 하다    
+
+try catch finally
+
+-----------
+1. 숙제 장바구니 each
+2. 버튼 클릭 이벤트 => 버튼을 기준으로 이름 출력
+   클릭한 학생의 성적 출력
+3. 이미지 슬라이더 
+4. 영화 정보 js => jquery
+
+on('click', moveR)
+function moveR(){
+
+}
+window.setInterval(moveR, 2000)

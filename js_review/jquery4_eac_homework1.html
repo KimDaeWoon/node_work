@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery4_eac_homework.html</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div>
+      <button>-</button>
+      <input value="1" size="3" />
+      <button>+</button>
+      <span>200</span>
+    </div>
+    <div>
+      <button>-</button>
+      <input value="1" size="3" />
+      <button>+</button>
+      <span>100</span>
+    </div>
+    <div>
+      <button>-</button>
+      <input value="1" size="3" />
+      <button>+</button>
+      <span>300</span>
+    </div>
+    <div>
+      <button>더하기</button>
+    </div>
+    <div id = result></div>
+    <script>
+
+        $("button").on("click", function () {
+          if($(event.target.tagName == 'BUTTON')){
+            let plus = $(event.target).prev().val();
+                plus = Number(plus) + 1;
+                $(event.target).prev().val(plus);
+
+            let minus = $(event.target).next().val();
+            console.log(minus);
+            minus = Number(minus) -1;
+            $(event.target).next().val(minus);
+
+            console.log($(event.target).next().html());
+          }          
+        });
+
+        console.log($("button").last());
+        $("button").last().on('click', function(){
+          let sum = 0;
+          $('span').each((index, item)=>{
+            //console.log($(item).html());
+          sum += $(item).prev().prev().val() * $(item).html();
+          })
+          $(result).html(sum);
+        })
+
+    </script>
+  </body>
+</html>

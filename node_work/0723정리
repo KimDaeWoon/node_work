@@ -1,0 +1,98 @@
+https://axios-http.com/kr/docs/post_example
+https://www.npmjs.com/search?q=axios
+https://www.npmjs.com/package/express
+펼침 연산자
+나머지 연산자
+spread 와 rest
+얕은 복사
+깊은 복사
+
+모듈 중요
+
+commonJs 
+지정 함수 설정 후 export 해서 import 사용가능
+
+npm ???
+
+
+명령행 인수
+node aaa.js 10 20 30
+    process.argv
+    // 자주 사용 중요!!
+    process.env
+java 환경변수
+class 클래스명 {
+    public static void main (String[] argv){
+        System.getEnv()
+        System.exit()
+    }
+}
+
+
+fs 파일 읽을때
+import fs from 'fs'
+// system 에서 제공하는 파일 은 '/' 안쓴다
+
+
+was 와 webserver 와의 차이
+
+
+npm install nodemon -g  
+
+node 쪽에서는 npm axios 자주 사용
+
+
+// ---------------------------------------------
+node : javascript 실행 환경 (server 구축 가능)
+        -> 예시 : web server 구축
+        http 모듈 -> express 프레임워크
+        비교 servlet -> spring 프레임워크 (java)
+
+npm                               (<= maven)
+    package.json                    pom.xml
+        - 프로젝트 정보
+        - 설치된 패키지 정보
+           dependency
+        - script 명령어
+
+    npm install <= 모든 package.json에 있는 패키지 설치
+    npm uninstall 제거
+    npm update 
+    npm ls
+
+내장모듈
+    fs,                                (<--- File(java))
+    process(argv, env)                 (<--- System(java))
+    url                                (<--- URL(java))    
+    http                               (tomcat/jboss/rejin .....)        
+
+외장모듈
+    npm 설치 후에 사용 가능
+    axios, express
+
+실습
+1.axios_test 폴더 생성
+2.package.json 파일생성
+3.axios 패키지 설치
+4.index.js 파일 생성
+
+fetch 함수 => axios 함수 변경
+    fetch
+        .then
+        .then
+
+5.node index.js 
+
+
+---------------------------------------------
+과제
+---------------------------------------------
+용어
+was // web server 비교
+
+library // framework 비교
+  library  개발자가 사용하기 쉽게 만든 코드 집합 (부품)
+  
+  framework 개발 시간을 줄이고,  코드의 재사용성을  증가 시키기 위해 일련의 클래스 묶음이나 (뼈대), 틀을 라이브러리 형태로 제공되는 것을 말한다.  
+  애플리케이션의 구조 또는 틀을 제공하며, 개발을 위한 기본적인 형태와 필수 요소를 포함하고 있습니다.
+jsp교재 -> 내장객체 (request, response, session, cookie)

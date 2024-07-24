@@ -1,0 +1,73 @@
+https://cyannara.github.io/
+json.org
+about:blank
+jsonplaceholder
+
+prepend => body 젤 위 추가
+append  => body 젤 밑 추가
+before	=> 특정 요소 위에 추가
+after	=> 특정 요소 아래에 추가
+event.target => 중단점 확인후 사용 가능
+Element => Event Listeners 에서 event 가 걸렸는지 확인
+classList.contains => 클래스 이름 포함 단어 
+classList.toggle =>
+insertAdjacentHTML => append 를 대신 사용 가능
+id 값이 정해 졌을때 javascript에서 그냥 불러 올 수 있다
+name 이 정해 졌을때 document.querySelector("[name=]")
+tagName => html <> 꺽쇄 괄호 에 있는 이름을 가져 온다 
+	  이때 event.target.tagName == 'P' // ' ' 안쪽 이름은 대문자 사용
+closest => 가장 가까운 div 태그 이름을 가져온다
+typeof => 형태 확인
+english['abc', 'apple'] : english[0] => abc 나온다 배열은 대괄호 접근
+
+mdn 사이트 자주 이용 javascript
+
+
+
+
+
+
+
+
+
+AJAX // JSON 차이 설명 가능 해야 함
+A: ASYNC 비동기
+JA: JAVASCRIPT
+X: XML
+server로 부터 data 를 가져와 page 이동 없이 페이지 일부분만 교체하는 기술
+JSON :(이렇게 생겨 먹었다) string 형식이다
+https://www.google.com/search?newwindow=1&sca_esv=58fb73deabeb3611&sca_upv=1&q=JSON&udm=2&fbs=AEQNm0DmKhoYsBCHazhZSCWuALW8l8eUs1i3TeMYPF4tXSfZ96qP8jk59Ek0sz1u1YABeO97Kg_HO-KtF2S8ZC2gd6OMgxanGK0ucuQE0TMKSErHKaqOzsl8G5OB8IiieWbwPUc5KQktnFwz2_4XqFZWROThPyje8er78SGt2wN8I2xunuBVePhKkWo1uMFiWz5spa_2zKSyCcC2ngnCWIztVZtgplD0Sg&sa=X&ved=2ahUKEwjPrKng6q-HAxXrklYBHa7OFvkQtKgLegQIBxAB&biw=1745&bih=866&dpr=1.1#vhid=IlW7E0yRxoYSUM&vssid=mosaic
+JS 
+O: OBJECT
+N: NOTIFICATION 
+
+
+OBJECT -> JSON (stringfy, parse) 
+
+AJAX 각광 받는 이유
+웹// 앱// 임베디드
+
+
+fetch 요청
+then result 받아오고 => json 형태로 변환
+then result 를  => 내가 처리
+
+CRUD
+1.get(조회)
+2.put(수정)
+3.post(등록)
+4.delete(삭제)
+
+
+
+예시
+emp = {name : "홍길동", dept: "개발"}
+typeof emp (object 형태)
+str = JSON.stringify(emp)
+typeof str   (string 형태)
+obj = JSON.parse(str)
+typeof obj (object 형태)
+
+과제
+1. table 
+https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd=20240983

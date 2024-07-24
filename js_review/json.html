@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let data = { name: "park", age: 20, hobby: ["독서", "게임"] };
+      // 독서만 출력 되도록 하기
+      // 배열은 대괄호 접근
+      console.log(data.hobby[0]);
+
+      // 중괄호 객체
+      let users = [
+        { name: "park", age: 20, hobby: ["독서", "게임"] },
+        { name: "kim", age: 20, hobby: ["영화감상", "자전거 타기"] },
+      ];
+      // 두번째 사용자의 첫번째 취미
+      console.log(users[1].hobby[1]);
+    </script>
+  </body>
+</html>

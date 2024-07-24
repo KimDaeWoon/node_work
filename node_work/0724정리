@@ -1,0 +1,37 @@
+https://expressjs.com/ko/guide/routing.html
+
+JSP -> node.js 전환방법 
+로드밸런싱 : 로드 밸런싱은 애플리케이션을 지원하는 리소스 풀 전체에 네트워크 트래픽을 균등하게 배포하는 방법입니다.
+            server 여러개 구축
+
+라우팅 : 클라이언트 요청에 응답하는 방법을 결정  
+        method 구분해서 응답
+
+app.메서드('패스', 핸들러(req, resp))          
+
+부메랑 설치 해라!
+
+
+
+req.query (localhost/user? 이부분이다[id = & age=])
+• query string에 접근 가능 
+
+미들웨어 모듈 용어 정리
+페이지 이동 
+req.redirect 
+resp.foward =>  req와 resp 
+https://velog.io/@bongf/learned-redirect-forward
+
+cors 
+다른 도메인 을 풀어주는 역할
+CORS란 도메인이 다른 서버끼리 리소스를 주고 받을 때 보안을 위해 설정된 정책
+
+
+referrer
+login 안했해서 login page 이동 후 로그인 이후 다시 이전 페이지 이동
+
+session 
+브라우저 상태에 따라 session 종료 될 수 있따
+
+request 
+client 요청으로 부터 발생 되면 request 생성

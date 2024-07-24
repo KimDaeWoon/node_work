@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery4_each.html</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button>+</button><input value="1" /><span>200</span><br />
+    <button>+</button><input value="2" /><span>100</span><br />
+    <button>+</button><input value="-1" /><span>300</span><br />
+    <button>+</button><input value="4" /><span>500</span><br />
+    <button>+</button><input value="5" /><span>700</span><br />
+    <div></div>
+    <script>
+      //js
+      //---------------------------------------------------
+      // for 문
+      //---------------------------------------------------
+      //   let sum = 0;
+      //   let Ivalue = document.querySelectorAll("input");
+      //   for (let i = 0; i < Ivalue.length; i++) {
+      //     console.log(Ivalue[i].value);
+      //     sum = sum + Number(Ivalue[i].value);
+      //     console.log(sum);
+      //   }
+      //   console.log(sum);
+      //   let div = document.querySelector("div");
+      //   div.innerHTML = sum;
+      //--------------------------------------------------
+      // forEach
+      //--------------------------------------------------
+      jqueryTotal();
+      cntUp();
+      function jsTotal() {
+        let total = 0;
+        let Ivalue = document.querySelectorAll("input");
+        Ivalue.forEach((ele) => {
+          consol.log();
+          total += Number(ele.value);
+        });
+        document.getElementsByTagName("div")[0].innerHTML = total;
+      }
+
+      //jquery
+      function jqueryTotal() {
+        let total = 0;
+        $("input").each((index, item) => {
+          let cnt = $(item).val();
+          if (cnt < 0) {
+            return false;
+          }
+          total += cnt * $(item).next().text();
+        });
+        $("div").html(total);
+      }
+
+      // next() input 태그 값 읽기
+      // 1증가
+      // 인풋태그 값을 변경
+      function cntUp() {
+        $("button").on("click", function () {
+          let Ival = $(event.target).next().val();
+          Ival = Number(Ival) + 1;
+          $(event.target).next().val(Ival);
+
+          jqueryTotal();
+        });
+      }
+    </script>
+  </body>
+</html>

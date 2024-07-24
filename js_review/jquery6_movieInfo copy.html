@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>이벤트 기간</th>
+          <th>이용등급</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody id="result"></tbody>
+    </table>
+    <div id="info"></div>
+    <script>
+      let url =
+        "http://api.kcisa.kr/openapi/API_CCA_149/request?serviceKey=29732bd7-f0fd-42fa-b61b-59102ede6db6";
+      $.ajax({
+        url: url,
+        method: "get",
+        dataType: "xml",
+      })
+        .done((data) => {
+          $(data)
+            .find("item")
+            .each((index, item) => {
+              let $title = $(item).children(0).eq(0).html();
+              let $period = $(item).children(0).eq(22).html();
+              let $audience = $(item).children(0).eq(20).html();
+              let $charge = $(item).children(0).eq(21).html();
+              let $locationId = $(item).children(0).eq(6).html();
+              let $link = $(item).children(0).eq(7).html();
+              let createTr = `<tr>
+                                  <td id=${$link}>${$title}</td>
+                                  <td>${$period}</td>
+                                  <td>${$audience}</td>
+                                  <td>${$charge}</td>
+                                </tr>`;
+              $("#result").prepend(createTr);
+            });
+          $("#result")
+            .children(0)
+            .on("dblclick", function () {
+              let $linkClone = $(event.target)
+                .closest("tr")
+                .children(0)
+                .attr("id");
+              console.log($linkClone);
+              // 모르겠음 ~~ 링크 거는 방법
+              location.href = $linkClone;
+            });
+        })
+        .fail(() => {});
+    </script>
+  </body>
+</html>

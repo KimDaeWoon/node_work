@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnReset">초기화</button>
+    <button id="btnInsert">등록</button>
+    <button id="btnUpdate">수정</button>
+    <button id="btnDelete">삭제</button>
+    <form name="frm">
+      userId <input type="text" name="userId" id="userId" /><br />
+      uid<input type="text" name="uid" id="uid" /><br />
+      title<input type="text" name="title" id="title" /><br />
+      completed<input type="text" name="completed" id="completed" /><br />
+    </form>
+    <div id="divTodos"></div>
+    <script>
+      //조회
+      let url = "https://jsonplaceholder.typicode.com/todos";
+      fetch(url)
+        .then((result) => result.json())
+        .then((result) => {
+          //console.log(result);
+          // 기존
+          //   for (i = 0; i < result.length; i++) {
+          //     let createP = document.createElement("p");
+          //     createP.innerHTML = result[i].title;
+          //     divTodos.append(createP);
+          //   }
+
+          // 추천 방식
+          result.forEach((element) => {
+            let newTag = `<div>${element.title}<button data-id ="${element.id}">조회</button></div>`;
+            divTodos.insertAdjacentHTML("beforeend", newTag);
+          });
+        });
+      //단건 조회
+      divTodos.addEventListener("click", function () {
+        if (event.target.tagName == "BUTTON") {
+          let id = event.target.dataset.id;
+          //`url+/+id` url + "/" + id
+          fetch(url + "/" + id)
+            .then((result) => result.json())
+            .then((result) => {
+              console.log(result);
+
+              //  userId.value = result.userId; // 아이디가 있을때
+              document.querySelector("[name=userId]").value = result.userId; // name 이 정의 되었을때
+              uid.value = result.id;
+              title.value = result.title;
+              completed.value = result.completed;
+            });
+        }
+      });
+      //초기화
+      btnReset.addEventListener("click", function () {
+        window.document.frm.reset();
+      });
+      //등록 : POST 방식
+      btnInsert.addEventListener("click", function () {
+        let param = {
+          userId: userId.value,
+          title: title.value,
+          completed: completed.value,
+        };
+        fetch(url, {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify(param),
+        })
+          .then((result) => result.json())
+          .then((result) => {
+            let newTag = `<div>${result.title}<button data-id ="${result.id}">조회</button></div>`;
+            divTodos.insertAdjacentHTML("afterbegin", newTag);
+          });
+      });
+      //수정
+
+      //삭제
+    </script>
+  </body>
+</html>

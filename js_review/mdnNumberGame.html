@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mdnNumberGame.html</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <label for="guessField">Enter a guess: </label>
+    <input type="text" id="guessField" class="guessField" />
+    <input type="submit" value="Submit guess" class="guessSubmit" />
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+      <p class="countNum"></p>
+    </div>
+    <script>
+      let randomNumber = Math.floor(Math.random() * 100 + 1);
+      console.log(randomNumber);
+
+      let arry = []; // 배열 만들어서 추측 한 값을 넣어 주기
+      let cnt = 0; // cnt 값을 1회 실행 할때 마다 1증가
+
+      $(".guessSubmit").on("click", function () {
+        abc();
+      });
+
+      function abc() {
+        let guessNumber = $("#guessField").val();
+        cnt++;
+        arry.push(guessNumber);
+        if (cnt < 10) {
+          $(".guesses").html(cnt + "회 했습니다");
+          if (guessNumber == randomNumber) {
+            $(".lowOrHi").html("정답입니다");
+            if (confirm("다시시작 하겠습니까?")) {
+              $(".resultParas").remove();
+              return false;
+              console.log(randomNumber);
+              let arry = [];
+              cnt;
+            }
+          } else if (guessNumber > randomNumber) {
+            $(".lastResult").html(
+              "정답 숫자보다 높습니다. 다시 생각 해보세요!"
+            );
+          } else {
+            $(".lastResult").html(
+              "정답 숫자보다 낮습니다. 다시 생각 해보세요!"
+            );
+          }
+        } else if (cnt == 10) {
+          alert("10회 끝났어요! 처음부터!");
+          $(".resultParas").remove();
+          arry = [];
+        }
+        $(".countNum").html(arry + "</br>");
+      }
+    </script>
+  </body>
+</html>

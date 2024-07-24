@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery_hw1.html</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button id="btnNext">다음문제</button>
+    <input id="num1" />+<input id="num2" />=<input id="result" />
+    <button id="btnConfirm">결과확인</button>
+    <script>
+      //btnNext 클릭 하면 1~10 난수 생성
+      // num1 과 num2 에 input 태그에 지정
+      $("#btnNext").on("click", function () {
+        let randomN1 = Math.floor(Math.random() * 10) + 1;
+        let randomN2 = Math.floor(Math.random() * 10) + 1;
+        $("#num1").val(randomN1);
+        $("#num2").val(randomN2);
+      });
+
+      // btnConfirm 클릭하면 두수의 합과 result가 같은지 결과 alert 으로 출력
+      $("#btnConfirm").on("click", function () {
+        let sum = Number($("#num1").val()) + Number($("#num2").val());
+        if ($("#result").val() == sum) {
+          alert("결과가 같습니다");
+        } else {
+          alert("결과가 다릅니다");
+        }
+      });
+
+      // mdn 숫자게임
+      // 1에서 100 가지 난수
+      // turn 수 10회 제한 기록
+      // 입력 받을 배열 값 지정
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+//-------------------------
+https://getbootstrap.com/docs/5.3/components/accordion/
+
+페이지 로드 이벤트 $(function(){}) load 자손 element element div p Selects all
+<p>elements inside</p>
+<div>
+  elements . 자식 element>element div > p Selects all
+  <p>elements where the parent is a</p>
+  <div>element 꺽세 기호 a[href^="https"] 달러 기호 a[href$=".pdf"]</div>
+</div>
+b
+
+//----------------------
+bootstrap 
+4버전 jquery 필요
+5버전 only javascript 
+
+//---------------------
+javascript bootstrap accordion 직접제어
+class 와 id 값을 주는 것만 다 주면 제어 가능
+//-----------------------
+prevent 
+stop propagation
+
+//-----------------------
+toast ui
+
+
+속성 
+setAttribute ('class', 'String') 태그의 속성 값은 문자(string)만 가능
+javascript setAttribute 와 jquery attr 
+
+
+property는 객체 타입도 가능
+. 연산자 
+txt.userInfo = {name : '홍길동',
+                dept: '개발'}
+txt.userInfo.name
+
+. 연산자는 jquery prop 와 같다
+setAttribute: 태그의 속성(value, alt, class)
+              속성 값은 문자(string)만 가능
+              xxxx.setAttribute(속성, 값) $().attr()
+property: dom 노드 속성,    
+          값의 형식 object 
+          xxx.속성 = 값
+          $().prop()
+
+//--------------------------------
+html dom rendering
+
+//--------------------------------
+다운로드
+https://nodejs.org/en/download/prebuilt-installer
+
+cmd창
+node -v
+node
+let num1 = 10;
+let num2 = 20;
+num1+num2
+notepade test.js
+node test.js
+
+cd tab 하면 내부 파일 찾아 간다
+// 비파괴 함수?
+중괄호 없으면 return 빼고
+중괄호 있으면 return 적어 줘야 된다
+
+// 과제 
+

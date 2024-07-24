@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jqueryui.html</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+  </head>
+  <body>
+    <div id="accordion">
+      <div class="group">
+        <h3 data-code="j2">java</h3>
+        <input id="hireDt" />
+        <div id="selDt"></div>
+
+        <div class="btnOpenModal">user1</div>
+        <div class="btnOpenModal">user2</div>
+      </div>
+      <div class="group">
+        <h3 data-code="j2">js</h3>
+        <div>js란</div>
+      </div>
+      <div class="group">
+        <h3 data-code="j3">node</h3>
+        <div>node란</div>
+      </div>
+    </div>
+    <!-- 모달 Tag -->
+    <div id="dialog-form" title="Create new user">
+      <p class="validateTips">All form fields are required.</p>
+
+      <form>
+        <fieldset>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="text ui-widget-content ui-corner-all"
+          />
+
+          <!-- Allow form submission with keyboard without duplicating the dialog button -->
+          <input
+            type="submit"
+            tabindex="-1"
+            style="position: absolute; top: -1000px"
+          />
+        </fieldset>
+      </form>
+    </div>
+    <script>
+      // script 는 제일 밑에 위치 해야 된다
+      // $(window).on('ready', function(){})
+      $(function () {
+        $("#accordion")
+          .accordion({
+            collapsible: true,
+            // effect 효과 설정
+            animate: { easing: "easeInBounce", duration: 1000 },
+            //active: 1,
+            header: "> div > h3",
+            heightStyle: "content",
+            activate: function (event, ui) {
+              console.log(event);
+              console.log(ui.newPanel);
+              console.log(ui.newHeader.html());
+              console.log(ui.newHeader.data("code"));
+              let code = ui.newHeader.data("code");
+              if (code == "j1") {
+                ui.newPanel.load("jquery3_groupEvent.html");
+              } else if (code == "j2") {
+                ui.newPanel.load("jquery1_selector.html");
+              } else if (code == "j3") {
+                ui.newPanel.load("jquery2_event.html");
+              }
+            },
+          })
+          .sortable({
+            axis: "y",
+            handle: "h3",
+            stop: function (event, ui) {
+              // IE doesn't register the blur when sorting
+              // so trigger focusout handlers to remove .ui-state-focus
+              ui.item.children("h3").triggerHandler("focusout");
+
+              // Refresh accordion to handle new order
+              $(this).accordion("refresh");
+            },
+          }); // end of $('accordion')
+        // datepicker
+        $("#hireDt").datepicker({
+          // 앞 뒤 2주 간격 으로 data 입력
+          dateFormat: "yy-mm-dd",
+          dayNamesMin: ["일", "월", "화요일", "수", "목", "금", "토"],
+          onSelect: function (dateStr, dateObj) {
+            console.log(dateStr);
+            $("#selDt").append(dateStr + `</br>`);
+            $("#selDt").append(dateObj.drawYear + "년");
+            $("#selDt").append(dateObj.selectedMonth + 1 + "월");
+            $("#selDt").append(dateObj.selectedDay + "일");
+            console.log(dateObj);
+          },
+          //minDate: new Date(24, 6 - 1, 1),
+          //maxDate: "+2w",
+        });
+
+        //dialog
+        //모달 설정
+        let dialog = $("#dialog-form").dialog({
+          // true 는 html 모달 창 보이도록
+          // false 는 처음 부터 html 안보이도록
+          autoOpen: false,
+          // 모달창 꺼야지 다른 것 작동 가능
+          modal: true,
+          open: function (ev) {
+            console.log("modal open");
+          },
+          // effect 효과 설정
+          show: { duration: 1000, effect: "shake" },
+          // button 조작설정
+          buttons: {
+            저장: function () {
+              alert("정상적으로 저장 되었습니다.");
+              console.log("save");
+              dialog.dialog("close");
+            },
+            취소: function () {
+              dialog.dialog("close");
+            },
+          },
+          close: function () {
+            document.forms[0].reset();
+          },
+        }); // end of dialog
+
+        // 모달창 button 클릭 시 작동
+        $(".btnOpenModal").on("click", function () {
+          dialog.dialog("open");
+        });
+      }); // end of $(function)
+    </script>
+  </body>
+</html>

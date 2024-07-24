@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .active {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 그룹 이벤트(이벤트 위임)
+         이벤트 전파 개념 
+    -->
+    <div id="divWords">
+      <div>그룹 이벤트 연습</div>
+      <p class="word">list</p>
+      <p class="word">nice</p>
+      <p class="word">good</p>
+      <p class="word">very</p>
+    </div>
+    <script>
+      divWords.addEventListener("click", function () {
+        // if(event.target.tagName == 'P')
+        if (event.target.classList.contains("word")) {
+          event.target.classList.toggle("active");
+        }
+      });
+    </script>
+  </body>
+</html>

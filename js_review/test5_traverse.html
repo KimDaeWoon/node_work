@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test5_traverse</title>
+  </head>
+  <body>
+    <div id="divFruit" data-group="fruit">
+      <div class="child" data-name="apple">
+        <span>사과</span><button data-no="f1">선택</button>
+      </div>
+      <div class="child" data-name="banana">
+        <span>바나나</span><button data-no="f2">선택</button>
+      </div>
+      <div class="child" data-name="orange">
+        <span>오렌지</span>
+        <button data-no="f3">선택</button>
+      </div>
+      <div class="child" data-name="grape">
+        <span>포도</span>
+        <button data-no="f4">선택</button>
+      </div>
+    </div>
+    <script>
+      divFruit.addEventListener("click", function () {
+        if (event.target.tagName == "BUTTON") {
+          //alert(event.target.dataset.no +"클릭되었다")
+          // alert(`${event.target.dataset.no} 클릭되었다`)    다르게 표현
+          //alert(event.target.previousElementSibling.innerText); // span 태그 이름 가져 오기
+          //alert(event.target.parentElement.dataset.name); //부모 요소 data 속성 가져오기
+          alert(`${event.target.closest("#divFruit").dataset.group} 클릭됨!!`); // 가장 가까운 div 태그 이름을 가져온다
+        }
+      });
+    </script>
+  </body>
+</html>
